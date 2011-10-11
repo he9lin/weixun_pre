@@ -5,6 +5,17 @@ var authorData = [
   },
 ];
 
+var feedVideoData = [
+  {
+    timestamp: "2011-11-18 08:37:00",
+    content: "A wonderful visual life.",
+    type: "video",
+    author: {
+      name: "Davis"
+    },
+  }
+];
+
 var feedData = [
   {
     timestamp: "2011-11-18 08:37:00",
@@ -48,6 +59,7 @@ describe("Author", function() {
   
 });
 
+//type, image_thumb_url, image_url, video_thumb_url, video_url
 describe("Feed", function() {
   beforeEach(function() {
     this.feed = new Feed(feedData[0]);
@@ -63,6 +75,15 @@ describe("Feed", function() {
   
   it("has a collection of comments", function() {
     expect(this.feed.comments.length).toEqual(2);
+  });
+  
+  it("defaults as text type", function() {
+    expect(this.feed.get("type")).toEqual("text");
+  });
+  
+  it("has different types", function() {
+    this.feed = new Feed(feedVideoData[0]);
+    expect(this.feed.get("type")).toEqual("video");
   });
 });
 

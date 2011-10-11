@@ -1,20 +1,31 @@
-!!!
+!!! 5
 %html
   %head
-    - ["jquery-1.6.4.min", "json2", "underscore", "backbone"].each do |f|
+    - ["jquery-1.6.4.min", "json2", "underscore", "backbone", "backbone-localstorage"].each do |f|
       %script{type: "text/javascript", src: "assets/javascripts/vendor/#{f}.js"}
       
     %script{type: "text/javascript", src: "assets/javascripts/Weixin.js"}
     
-    %script{id: "feeds-template", type: "text/html"}
+    %script{id: "feeds_template", type: "text/html"}
       %h1 Feeds
-      %ul
-    %script{id: "feed-template", type: "text/html"}  
+      %form{class: "new_feed"}
+        %textarea{name: "feed[content]"}
+        %input{type: "submit", value: "Share"}
+      %ul.feed_list
+      
+    %script{id: "feed_template", type: "text/html"}  
       %h3 <%= author.name %>
       %p <%= content %>
-    %script{id: "comment-template", type: "text/html"}
+  
+    %script{id: "comment_form_template", type: "text/html"}
+      %form{class: "new_comment"}
+        %textarea{name: "comment[content]"}
+        %input{type: "submit", value: "Reply"}
+        
+    %script{id: "comment_template", type: "text/html"}
       %h4 <%= author.name %>
       %p <%= content %>
+      
     :javascript
       $(function() {
         window.feedsView = new FeedsView({collection: window.feeds});

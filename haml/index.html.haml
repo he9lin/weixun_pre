@@ -1,6 +1,79 @@
 !!!
 %html
   %head
-    %script{type: "text/javascript", src: "assets/javascripts/backbone.js"}
+    - ["jquery-1.6.4.min", "json2", "underscore", "backbone"].each do |f|
+      %script{type: "text/javascript", src: "assets/javascripts/vendor/#{f}.js"}
+      
+    %script{type: "text/javascript", src: "assets/javascripts/Weixin.js"}
+    
+    %script{id: "feeds-template", type: "text/html"}
+      %h1 Feeds
+      %ul
+    %script{id: "feed-template", type: "text/html"}  
+      %h3 <%= author.name %>
+      %p <%= content %>
+    %script{id: "comment-template", type: "text/html"}
+      %h4 <%= author.name %>
+      %p <%= content %>
+    :javascript
+      $(function() {
+        window.feedsView = new FeedsView({collection: window.feeds});
+        window.feeds.reset([
+          {
+            timestamp: "2011-11-18 08:37:00",
+            content: "A wonderful life.",
+            author: {
+              name: "Davis"
+            },
+            comments: [
+              {
+                timestamp: "2011-11-18 08:37:15",
+                content: "Yes, it is.",
+                author: {
+                  name: "Maggie"
+                },
+              },
+              {
+                timestamp: "2011-11-18 08:37:35",
+                content: "Sure...",
+                author: {
+                  name: "Lisa"
+                },
+              },
+            ]
+          }, 
+          {
+            timestamp: "2011-11-18 08:37:00",
+            content: "A wonderful life.",
+            author: {
+              name: "Davis"
+            },
+            comments: [
+              {
+                timestamp: "2011-11-18 08:37:15",
+                content: "Yes, it is.",
+                author: {
+                  name: "Maggie"
+                },
+              },
+              {
+                timestamp: "2011-11-18 08:37:35",
+                content: "Sure...",
+                author: {
+                  name: "Lisa"
+                },
+              },
+            ]
+          },
+        ]);
+        $("#container").append(window.feedsView.render().el);
+      });
   %body
-    %h1 The Best
+    #container
+      %header
+        %nav
+          %ul
+            %li
+              %a Online Courses
+            %li
+              %a Ebooks

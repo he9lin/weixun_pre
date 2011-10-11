@@ -1,0 +1,48 @@
+[
+  {
+    timestamp: "2011-11-18 08:37:00",
+    content: "A wonderful life.",
+    author: {
+      name: "Davis"
+    },
+    comments: [
+      {
+        timestamp: "2011-11-18 08:37:15",
+        content: "Yes, it is.",
+        author: {
+          name: "Maggie"
+        },
+      },
+      {
+        timestamp: "2011-11-18 08:37:35",
+        content: "Sure...",
+        author: {
+          name: "Lisa"
+        },
+      },
+    ]
+  }, 
+  {
+    timestamp: "2011-11-18 08:37:00",
+    content: "A wonderful life.",
+    author: {
+      name: "Davis"
+    },
+    comments: [
+      {
+        timestamp: "2011-11-18 08:37:15",
+        content: "Yes, it is.",
+        author: {
+          name: "Maggie"
+        },
+      },
+      {
+        timestamp: "2011-11-18 08:37:35",
+        content: "Sure...",
+        author: {
+          name: "Lisa"
+        },
+      },
+    ]
+  },
+]

@@ -14,6 +14,10 @@
       %span.title <%= title %>
       %span.cell <%= cell %>
       
+    %script{id: "contact_section_template", type: "text/html"}
+      %h3.alphabet <%= alphabet %>
+      %ul
+      
     %script{id: "contact_full_template", type: "text/html"}
       != "<img src='<%= avatar_url %>' />"
       %h3 <%= name %>

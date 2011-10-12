@@ -13,9 +13,43 @@
       template:  _.template($("#contact_full_template").html()),
     });
     
+    window.ContactSectionView = Backbone.View.extend({
+      tagName:   'div',
+      className: 'contact_section',
+      template:  _.template($("#contact_section_template").html()),
+      
+      events: {
+        'click h3.alphabet': 'toggleContactSection'
+      },
+      
+      initialize: function() {
+        _.bindAll(this, 'render', 'toggleContactSection');
+      },
+      
+      toggleContactSection: function(e) {
+        $(e.target).siblings('ul').slideToggle();
+      },
+      
+      render: function() {
+        $(this.el).html(this.template({alphabet: this.model.section}));
+        
+        var container = this.$('ul');
+        
+        $.each(this.model.contacts, function(index, contact) {
+          var view = new ContactView({
+            model: contact,
+            id: "contact_" + contact.cid,
+          });
+          container.append(view.render().el);
+        });
+        
+        return this;
+      },
+    });
+    
     window.ContactsView = Backbone.View.extend({
       tagName: 'section',
-      className: 'contacts-book',
+      className: 'contacts_book',
       
       events: {
         'click li.contact': 'showContact'
@@ -49,20 +83,10 @@
           grouped = _.groupBy(sorted, function(item) { return item.get('alphabet'); });
           
         $.each(grouped, function(section, contacts) {
-          var header = $('<h3>').text(section),
-            sectionContainer = $('<ul>');
-            
-          container.append(header);
-          container.append(sectionContainer);
-          
-          $.each(contacts, function(index, contact) {
-            var view = new ContactView({
-              model: contact,
-              id: "contact_" + contact.cid,
-            });
-            sectionContainer.append(view.render().el);
-          });
+          var view = new ContactSectionView({model: {section: section, contacts: contacts}});
+          container.append(view.render().el);
         });
+        
         return this;
       },
     });

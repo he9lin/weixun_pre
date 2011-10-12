@@ -1,36 +1,5 @@
 (function($) {
-
-  window.Comment  = Backbone.Model.extend({});
-  window.Comments = Backbone.Collection.extend({
-    model: Comment
-  });
-
-  window.Author = Backbone.Model.extend({
-    defaults: {
-      "avatar_url": "assets/images/avatar/missing.png"
-    }
-  });
-  
-  window.Feed = Backbone.Model.extend({
-    defaults: {
-      "type": "text"
-    },
-    
-    initialize: function(options) {
-      this.author = new Author(options.author);
-      this.comments = new Comments(options.comments);
-    },
-  });
-  
-  window.Feeds = Backbone.Collection.extend({
-    model: Feed,
-    localStorage: new Store("feeds"),
-  });
-  
-  window.feeds = new Feeds();
-  
   $(document).ready(function() {
-    
     window.FeedView = Backbone.View.extend({
       tagName:   'li',
       className: 'feed',
@@ -136,7 +105,11 @@
   });
   
   
-  // Default user (logged in user)
+  
+  // Create a jquery form, that checks for blankness of inputs
+  // and resets inputs after submit. And does the disable button
+  // stuff like rails js
+  
   $('form.new_comment').live('submit', function(e) {
     var textarea = $('textarea', this),
       content = $.trim(textarea.val());
@@ -187,5 +160,4 @@
     e.preventDefault();
     return false;
   });
-  
 })(jQuery);

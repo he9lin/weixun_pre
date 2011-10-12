@@ -1,19 +1,20 @@
-Ebook:
+Book:
 
 has many pages
 
 * id
 * title
+* sub title
 * author
 * cover_url
 * pages
 * timestamp
+* rating
 
 Page:
 
 * id
 * image_url
-
 
 Video:
 
@@ -23,6 +24,8 @@ Video:
 * video_url
 * cover_url
 * timestamp
+* view_count
+* reply_count
 
 Feed:
 

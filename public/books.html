@@ -8,28 +8,25 @@
     <script src='assets/javascripts/vendor/backbone-localstorage.js' type='text/javascript'></script>
     <script src='assets/javascripts/SampleData.js' type='text/javascript'></script>
     <script src='assets/javascripts/Weixun.js' type='text/javascript'></script>
-    <script src='assets/javascripts/Feeds.js' type='text/javascript'></script>
-    <script id='feeds_template' type='text/html'>
-      <h1>Feeds</h1>
-      <form class='new_feed'>
-        <textarea name='feed[content]'></textarea>
-        <input type='submit' value='Share' />
-      </form>
-      <ul class='feed_list'></ul>
+    <script src='assets/javascripts/Books.js' type='text/javascript'></script>
+    <script id='book_template' type='text/html'>
+      <img src='<%= cover_thumb_url %>' />
+      <h3><%= title %></h3>
+      <span class='author'><%= author_name %></span>
     </script>
-    <script id='feed_template' type='text/html'>
-      <h3><%= author.name %></h3>
-      <p><%= content %></p>
-    </script>
-    <script id='comment_form_template' type='text/html'>
-      <form class='new_comment'>
-        <textarea name='comment[content]'></textarea>
-        <input type='submit' value='Reply' />
-      </form>
-    </script>
-    <script id='comment_template' type='text/html'>
-      <h4><%= author.name %></h4>
-      <p><%= content %></p>
+    <script id='book_full_template' type='text/html'>
+      <img src='<%= cover_url %>' />
+      <h3><%= title %></h3>
+      <p class='summary'><%= summary %></p>
+      <section class='pages'>
+        <nav>
+          <button id='prev_page'>Prev</button>
+          <button id='next_page'>Next</button>
+        </nav>
+        <div id='page_container'>
+          <img />
+        </div>
+      </section>
     </script>
     <script id='author_template' type='text/html'>
       <img src='<%= avatar_url %>' />
@@ -38,13 +35,10 @@
     <script type='text/javascript'>
       //<![CDATA[
         $(function() {
-          window.feeds = new Feeds(window.SampleData.feeds);
-          window.feedsView = new FeedsView({collection: window.feeds});
-          $("#main").append(window.feedsView.render().el);
-          
-          window.authors = new Authors(window.SampleData.authors);
-          window.authorsView = new AuthorsView({collection: window.authors});
-          $("#side").append(window.authorsView.render().el);
+          window.books = new Books(window.SampleData.books);
+          window.bookShelfView = new BookShelfView({collection: window.books});
+          $("#side").append(window.bookShelfView.render().el);
+          window.bookShelfView.updateBook();
         });
       //]]>
     </script>

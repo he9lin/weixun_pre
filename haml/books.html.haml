@@ -1,0 +1,48 @@
+!!! 5
+%html
+  %head
+    - ["jquery-1.6.4.min", "json2", "underscore", "backbone", "backbone-localstorage"].each do |f|
+      %script{type: "text/javascript", src: "assets/javascripts/vendor/#{f}.js"}
+      
+    %script{type: "text/javascript", src: "assets/javascripts/SampleData.js"}
+    %script{type: "text/javascript", src: "assets/javascripts/Weixun.js"}
+    %script{type: "text/javascript", src: "assets/javascripts/Books.js"}
+    
+    %script{id: "book_template", type: "text/html"}
+      != "<img src='<%= cover_thumb_url %>' />"
+      %h3 <%= title %>
+      %span.author <%= author_name %>
+    
+    %script{id: "book_full_template", type: "text/html"}
+      != "<img src='<%= cover_url %>' />"
+      %h3 <%= title %>
+      %p.summary <%= summary %>
+      %section.pages
+        %nav
+          %button{id: "prev_page"} Prev
+          %button{id: "next_page"} Next
+        #page_container
+          %img
+      
+    %script{id: "author_template", type: "text/html"}
+      != "<img src='<%= avatar_url %>' />"
+      %span <%= name %>
+      
+    :javascript
+      $(function() {
+        window.books = new Books(window.SampleData.books);
+        window.bookShelfView = new BookShelfView({collection: window.books});
+        $("#side").append(window.bookShelfView.render().el);
+        window.bookShelfView.updateBook();
+      });
+  %body
+    #container
+      %header
+        %nav
+          %ul
+            %li
+              %a Online Courses
+            %li
+              %a Ebooks
+      #main
+      #side

@@ -1,0 +1,42 @@
+!!! 5
+%html
+  %head
+    - ["jquery-1.6.4.min", "json2", "underscore", "backbone", "backbone-localstorage"].each do |f|
+      %script{type: "text/javascript", src: "assets/javascripts/vendor/#{f}.js"}
+      
+    %script{type: "text/javascript", src: "assets/javascripts/SampleData.js"}
+    %script{type: "text/javascript", src: "assets/javascripts/Weixun.js"}
+    %script{type: "text/javascript", src: "assets/javascripts/Contacts.js"}
+    
+    %script{id: "contact_template", type: "text/html"}
+      != "<img src='<%= avatar_url %>' />"
+      %span.name <%= name %>
+      %span.title <%= title %>
+      %span.cell <%= cell %>
+      
+    %script{id: "contact_full_template", type: "text/html"}
+      != "<img src='<%= avatar_url %>' />"
+      %h3 <%= name %>
+      %span <%= title %>
+      %ul.details
+        %li.cell <%= cell %>
+        %li.email <%= email %>
+      
+    :javascript
+      $(function() {
+        window.contacts = new Contacts(window.SampleData.contacts);
+        window.contactsView = new ContactsView({collection: window.contacts});
+        $("#main").append(window.contactsView.render().el);
+        window.contactsView.updateContact();
+      });
+  %body
+    #container
+      %header
+        %nav
+          %ul
+            %li
+              %a Online Courses
+            %li
+              %a Ebooks
+      #main
+      #secondary

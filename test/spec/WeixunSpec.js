@@ -161,40 +161,58 @@ describe("BookPlayer", function() {
   });
 });
 
-describe("BookShelfPlayer", function() {
+describe("ItemsPlayer", function() {
   beforeEach(function() {
-    this.bookShelfPlayer = new BookShelfPlayer();
+    this.itemsPlayer = new ItemsPlayer({items: new Books()});
   });
   
-  describe("with no books", function() {
-    it("starts with book at index 0", function() {
-      expect(this.bookShelfPlayer.get("currentBookIndex")).toEqual(0);
+  describe("with no items", function() {
+    it("starts with item at index 0", function() {
+      expect(this.itemsPlayer.get("currentItemIndex")).toEqual(0);
     });
   });
   
   describe("with added books", function() {
     beforeEach(function() {
-      this.bookShelfPlayer.bookShelf.add(bookData);
+      this.itemsPlayer.items.add(bookData);
     });
     
-    it("has a book shelf", function() {
-      expect(this.bookShelfPlayer.bookShelf.models.length).toEqual(1);
+    it("has an item list", function() {
+      expect(this.itemsPlayer.items.models.length).toEqual(1);
     });
 
-    it("has a current book", function() {
-      expect(this.bookShelfPlayer.currentBook().get("title")).toEqual("Rich Dad, Poor Dad");
+    it("has a current item", function() {
+      expect(this.itemsPlayer.currentItem().get("title")).toEqual("Rich Dad, Poor Dad");
     });
     
-    describe("while viewing", function() {
-      it("sets current book by cid", function() {
-        this.bookShelfPlayer.bookShelf.add({
-          title: "Another book",
-        });
-        
-        var newBook = this.bookShelfPlayer.bookShelf.at(1);
-        this.bookShelfPlayer.setCurrentBookByCid(newBook.cid);
-        expect(this.bookShelfPlayer.currentBook().get('title')).toEqual("Another book");
-      })
+    it("sets current item by cid", function() {
+      this.itemsPlayer.items.add({
+        title: "Another book",
+      });
+      
+      var newItem = this.itemsPlayer.items.at(1);
+      this.itemsPlayer.setCurrentItemByCid(newItem.cid);
+      expect(this.itemsPlayer.currentItem().get('title')).toEqual("Another book");
+    })
+  });
+});
+
+describe("Contact", function() {
+  beforeEach(function() {
+    this.contact = new window.Contact({
+      cell: "1313131313"
     });
+  });
+  
+  it("creates from data", function() {
+    expect(this.contact.get('cell')).toEqual('1313131313');
+  });
+  
+  it("defaults to 'A' as first alphabet of name", function() {
+    expect(this.contact.get('alphabet')).toEqual('A');
+  });
+  
+  it("defaults to missing png for avatar url", function() {
+    expect(this.contact.get("avatar_url")).toEqual("assets/images/avatar/missing.png");
   });
 });

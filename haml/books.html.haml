@@ -24,10 +24,6 @@
         #page_container
           %img
       
-    %script{id: "author_template", type: "text/html"}
-      != "<img src='<%= avatar_url %>' />"
-      %span <%= name %>
-      
     :javascript
       $(function() {
         window.books = new Books(window.SampleData.books);

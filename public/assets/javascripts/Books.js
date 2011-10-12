@@ -55,7 +55,7 @@
       
       openBook: function(e) {
         var cid = $(e.target).closest('li.book').attr('id').substring(5);
-        this.player.setCurrentBookByCid(cid);
+        this.player.setCurrentItemByCid(cid);
       },
       
       initialize: function() {
@@ -63,21 +63,21 @@
           'render',
           'updateBook');
           
-        var player = this.player = new BookShelfPlayer();
+        var player = this.player = new ItemsPlayer({items: new Books()});
         this.collection.each(function(book) {
-          player.bookShelf.add(book);
+          player.items.add(book);
         });
-        this.player.bind('change:currentBookIndex', this.updateBook);
+        this.player.bind('change:currentItemIndex', this.updateBook);
       },
       
       updateBook: function() {
-        var view = new BookFullView({model: this.player.currentBook()});
+        var view = new BookFullView({model: this.player.currentItem()});
         $('#main').html(view.render().el);
       },
       
       render: function() {
         var container = $(this.el);
-        this.player.bookShelf.each(function(book) {
+        this.player.items.each(function(book) {
           var view = new BookView({
             model: book,
             id: "book_" + book.cid,

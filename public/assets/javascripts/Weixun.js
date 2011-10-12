@@ -1,4 +1,13 @@
 (function($) {
+  window.Contact = Backbone.Model.extend({
+    defaults: {
+      alphabet: "A",
+      avatar_url: "assets/images/avatar/missing.png",
+    }
+  });  
+  
+  window.Contacts = Backbone.Collection.extend({ model: Contact });
+  
   window.Page = Backbone.Model.extend({
     defaults: {
       url: "assets/images/pages/missing.png"
@@ -18,6 +27,26 @@
   });
   
   window.Books = Backbone.Collection.extend({ model: Book });
+  
+  window.ItemsPlayer = Backbone.Model.extend({
+    defaults: {
+      currentItemIndex: 0,
+    },
+    
+    initialize: function(options) {
+      this.items = options.items;
+    },
+    
+    currentItem: function() {
+      return this.items.at(this.get('currentItemIndex'));
+    },
+    
+    setCurrentItemByCid: function(cid) {
+      var item = this.items.getByCid(cid);
+      var itemIndex = this.items.indexOf(item);
+      this.set({'currentItemIndex': itemIndex});
+    },
+  });
   
   window.BookPlayer = Backbone.Model.extend({
     defaults: {
@@ -44,26 +73,6 @@
       if (currentPageIndex < this.book.pages.length - 1) {
         this.set({'currentPageIndex': currentPageIndex + 1});
       }
-    },
-  });
-  
-  window.BookShelfPlayer = Backbone.Model.extend({
-    defaults: {
-      currentBookIndex: 0,
-    },
-    
-    initialize: function() {
-      this.bookShelf = new Books();
-    },
-    
-    currentBook: function() {
-      return this.bookShelf.at(this.get('currentBookIndex'));
-    },
-    
-    setCurrentBookByCid: function(cid) {
-      var book = this.bookShelf.getByCid(cid);
-      var bookIndex = this.bookShelf.indexOf(book);
-      this.set({'currentBookIndex': bookIndex});
     },
   });
 
@@ -109,30 +118,6 @@
 
       render: function() {
         $(this.el).html(this.template(this.model.toJSON()));
-        return this;
-      },
-    });
-    
-    window.AuthorView = window.ModelBaseView.extend({
-      tagName:   'li',
-      className: 'author',
-      template:  _.template($("#author_template").html()),
-    });
-    
-    window.AuthorsView = Backbone.View.extend({
-      tagName: 'ul',
-      className: 'authors',
-      
-      initialize: function() {
-        _.bindAll(this, 'render');
-      },
-      
-      render: function() {
-        var container = $(this.el);
-        this.collection.each(function(author) {
-          var view = new AuthorView({model: author});
-          container.append(view.render().el);
-        });
         return this;
       },
     });

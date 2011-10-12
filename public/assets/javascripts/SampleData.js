@@ -1,4 +1,34 @@
 window.SampleData = {
+  contacts: [
+    {
+      name: 'Biz Stone',
+      title: 'Founder of Twitter',
+      alphabet: 'B',
+      cell: '123456789',
+      email: 'biz.stone@twitter.com'
+    },
+    {
+      name: 'Bill Gates',
+      title: 'Founder of Microsoft Corp.',
+      alphabet: 'B',
+      cell: '123456789',
+      email: 'bill.gates@microsoft.com',
+    },
+    {
+      name: 'Alan Greenspan',
+      title: 'Economist',
+      alphabet: 'A',
+      cell: '123456789',
+      email: 'alang@econ.com',
+    },
+    {
+      name: 'Steven Stillberg',
+      title: 'Director at Dreamworks',
+      alphabet: 'S',
+      cell: '123456789',
+      email: 'stevens@dreamworks.com',
+    }
+  ],
   feeds: [
     {
       timestamp: "2011-11-18 08:37:00",
@@ -74,7 +104,7 @@ window.SampleData = {
       ]
     },
     {
-      title: "Rich Dad, Poor Dad",
+      title: "Rich Dad, Poor Dad 2",
       sub_title: "How to get rich from the beginning",
       summary: "The book is largely based on Kiyosaki's upbringing and education in Hawaii. The book highlights the different attitudes to money, work and life of two men, and how they in turn influenced key decisions in Kiyosaki's life.",
       author_name: "Davis",

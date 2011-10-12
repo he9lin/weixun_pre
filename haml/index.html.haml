@@ -4,10 +4,9 @@
     - ["jquery-1.6.4.min", "json2", "underscore", "backbone", "backbone-localstorage"].each do |f|
       %script{type: "text/javascript", src: "assets/javascripts/vendor/#{f}.js"}
       
-    %script{type: "text/javascript", src: "assets/javascripts/SampleData.js"}
-    %script{type: "text/javascript", src: "assets/javascripts/Weixun.js"}
-    %script{type: "text/javascript", src: "assets/javascripts/Feeds.js"}
-    
+    - ["SampleData", "Weixun", "Authors", "Feeds"].each do |f|
+      %script{type: "text/javascript", src: "assets/javascripts/#{f}.js"}
+      
     %script{id: "feeds_template", type: "text/html"}
       %h1 Feeds
       %form{class: "new_feed"}

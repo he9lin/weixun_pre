@@ -40,7 +40,7 @@
         
         window.authors = new Authors(window.SampleData.authors);
         window.authorsView = new AuthorsView({collection: window.authors});
-        $("#side").append(window.authorsView.render().el);
+        $("#secondary").append(window.authorsView.render().el);
       });
   %body
     #container
@@ -52,4 +52,4 @@
             %li
               %a Ebooks
       #main
-      #side
+      #secondary

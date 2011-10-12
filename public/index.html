@@ -44,7 +44,7 @@
           
           window.authors = new Authors(window.SampleData.authors);
           window.authorsView = new AuthorsView({collection: window.authors});
-          $("#side").append(window.authorsView.render().el);
+          $("#secondary").append(window.authorsView.render().el);
         });
       //]]>
     </script>
@@ -64,7 +64,7 @@
         </nav>
       </header>
       <div id='main'></div>
-      <div id='side'></div>
+      <div id='secondary'></div>
     </div>
   </body>
 </html>

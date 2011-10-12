@@ -32,7 +32,7 @@
       $(function() {
         window.books = new Books(window.SampleData.books);
         window.bookShelfView = new BookShelfView({collection: window.books});
-        $("#side").append(window.bookShelfView.render().el);
+        $("#secondary").append(window.bookShelfView.render().el);
         window.bookShelfView.updateBook();
       });
   %body
@@ -45,4 +45,4 @@
             %li
               %a Ebooks
       #main
-      #side
+      #secondary

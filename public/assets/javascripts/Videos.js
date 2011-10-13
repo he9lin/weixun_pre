@@ -40,8 +40,9 @@
       
       updateVideo: function() {
         var view = new VideoFullView({model: this.player.currentItem()});
-        console.log(view.render().el);
         $('#secondary').html(view.render().el);
+        
+        // $('#main #video_container')....
       },
       
       render: function() {

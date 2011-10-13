@@ -4,6 +4,7 @@
     %meta{charset: "utf-8"}
     %title 精品课堂
     %link{href: "assets/css/screen.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}
+    %link{href: "assets/css/video-js.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}
   
     - ["jquery-1.6.4.min", "json2", "underscore", "backbone", "backbone-localstorage"].each do |f|
       %script{type: "text/javascript", src: "assets/javascripts/vendor/#{f}.js"}
@@ -11,6 +12,7 @@
     %script{type: "text/javascript", src: "assets/javascripts/SampleData.js"}
     %script{type: "text/javascript", src: "assets/javascripts/Weixun.js"}
     %script{type: "text/javascript", src: "assets/javascripts/Videos.js"}
+    %script{type: "text/javascript", src: "assets/javascripts/video.js"}
     
     %script{id: "video_template", type: "text/html"}
       != "<img src='<%= cover_thumb_url %>' />"
@@ -36,6 +38,8 @@
         window.videoShelfView = new VideoShelfView({collection: window.videos});
         $("#content_container section.related_videos").append(window.videoShelfView.render().el);
         window.videoShelfView.updateVideo();
+        VideoJS.setupAllWhenReady();
+        
       });
   %body.two_col
     #container
@@ -52,6 +56,9 @@
         #content_container
           #main
             #video_container
+              .video-js-box{:id => "player_div"}
+                %video{:id=>"video_box", :class=>"video-js", :width=>"560", :height=>"400", :controls=>"controls", :preload=>"auto",  :poster=>"assets/images/avatar/missing.png"}
+                  %source{:src=>"assets/videos/1.mp4", :type=>'video/mp4; codecs="avc1.42E01E, mp4a.40.2"'}
           #secondary
           %section.related_videos
             %header

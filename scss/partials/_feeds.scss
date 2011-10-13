@@ -22,9 +22,11 @@ li.feed {
     border: 1px solid #CCC;
     margin-right: 10px;
   }
-  // .feed_content, .feed_meta, ul.comments { margin-left: $margin-left; }
   p.feed_content {
     margin-bottom: 0.5em;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    padding-right: 10px;
   }
   .feed_meta {
     color: $meta-color;

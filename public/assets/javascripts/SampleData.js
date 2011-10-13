@@ -93,7 +93,7 @@ window.SampleData = {
   feeds: [
     {
       timestamp: "2011-11-18 08:37:00",
-      content: "A wonderful life.",
+      content: "这次聚会我不在成都，下次要叫上我哈〜一定到.",
       author: window.SampleAuthors.A,
       type: "photo",
       photo_thumb_url: "assets/images/feeds/feed_photo_1s.png",
@@ -113,27 +113,60 @@ window.SampleData = {
     }, 
     {
       timestamp: "2011-11-18 08:37:00",
-      content: "A wonderful life.",
-      author: {
-        name: "Davis",
-        avatar_url: "assets/images/avatars/missing.png"
-      },
+      content: " 记录老成都 ── 什么时候开始，成都老巷子失去了这样的清净，充斥着游客。而车铃声回响在巷子里面的画面，已很少见了。",
+      author: window.SampleAuthors.D,
+      type: "photo",
+      photo_thumb_url: "assets/images/feeds/feed_photo_2s.png",
+      photo_url: "assets/images/feeds/feed_photo_2.png",
       comments: [
         {
           timestamp: "2011-11-18 08:37:15",
-          content: "Yes, it is.",
-          author: {
-            name: "Maggie",
-            avatar_url: "assets/images/avatars/missing.png"
-          },
+          content: "言之有理",
+          author: window.SampleAuthors.A,
+        },
+      ]
+    },
+    {
+      timestamp: "2011-11-18 08:37:00",
+      content: "有啥拼啥、没啥拼命！【人都是逼出来的】一个人，如果不逼自己一把，就根本不知道自己有多优秀。每个人都有潜能的，所以，当面对压力时，要相信自己，一切都能处理得好。",
+      author: window.SampleAuthors.C,
+      comments: [
+        {
+          timestamp: "2011-11-18 08:37:15",
+          content: "言之有理",
+          author: window.SampleAuthors.E,
         },
         {
           timestamp: "2011-11-18 08:37:35",
-          content: "Sure...",
-          author: {
-            name: "Lisa",
-            avatar_url: "assets/images/avatars/missing.png"
-          },
+          content: "我感觉压力大",
+          author: window.SampleAuthors.A,
+        },
+      ]
+    },
+    {
+      timestamp: "2011-11-18 08:37:00",
+      content: "永远不要认为我们可以逃避，我们的每一步都决定着最后的结局，我们的脚正在走向我们自己选定的终点。",
+      author: window.SampleAuthors.C,
+      comments: [
+        {
+          timestamp: "2011-11-18 08:37:15",
+          content: "言之有理",
+          author: window.SampleAuthors.E,
+        },
+      ]
+    },
+    {
+      timestamp: "2011-11-18 08:37:00",
+      content: "记录老成都，成都生活 ── 新开街。",
+      author: window.SampleAuthors.D,
+      type: "photo",
+      photo_thumb_url: "assets/images/feeds/feed_photo_2s.png",
+      photo_url: "assets/images/feeds/feed_photo_2.png",
+      comments: [
+        {
+          timestamp: "2011-11-18 08:37:15",
+          content: "言之有理",
+          author: window.SampleAuthors.A,
         },
       ]
     },
@@ -147,9 +180,9 @@ window.SampleData = {
   ],
   books: [
     {
-      title: "Rich Dad, Poor Dad",
-      sub_title: "How to get rich from the beginning",
-      summary: "The book is largely based on Kiyosaki's upbringing and education in Hawaii. The book highlights the different attitudes to money, work and life of two men, and how they in turn influenced key decisions in Kiyosaki's life.",
+      title: "我愛陶瓷LOVERAMICS",
+      sub_title: "",
+      summary: "筆者愛陶瓷物品，愛陶瓷的實用性與多變的造型，也愛陶瓷的一點脆弱感覺。這回帶來了一個自己很欣賞的陶瓷品牌LOVERAMICS（愛陶樂）",
       author_name: "Davis",
       timestamp: "2011-11-18 08:37:45",
       cover_thumb_url: "assets/images/books/rdpd_thumb.png",

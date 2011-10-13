@@ -27,24 +27,28 @@ window.SampleData = {
       title: "耶鲁公开课",
       cover_thumb_url: "assets/images/avatars/missing.png",
       author_name: "Shit",
+      link: "assets/videos/1.mp4",
       summary: "Shittty"
     },
     {
       title: "麻省理工公开课",
       cover_thumb_url: "assets/images/avatars/missing.png",
       author_name: "Shit",
+      link: "assets/videos/2.mp4",
       summary: "Shittty"
     },
     {
       title: "麻省理工公开课2",
       cover_thumb_url: "assets/images/avatars/missing.png",
       author_name: "Shit",
+      link: "assets/videos/3.mp4",
       summary: "Shittty"
     },
     {
       title: "麻省理工公开课3",
       cover_thumb_url: "assets/images/avatars/missing.png",
       author_name: "Shit",
+      link: "assets/videos/1.mp4",
       summary: "Shittty"
     },
   ],

@@ -21,9 +21,14 @@
       %p.feed_content
         %span.author <%= author.name %>
         <%= content %>
+      <% if(type == 'photo') { %>
+      != "<img src='<%= photo_thumb_url %>' class='feed_photo'　title='点击看大图'/>"
+      != "<img src='<%= photo_url %>' class='feed_photo' style='display: none;'/>"
+      <% } %>
       .feed_meta.clear
         %span.time <%= (timestamp == 'Just now') ? "几秒钟之前" : timestamp %>
-        %a{href:"javascript:void(0)", class:"comments_toggler"} 评论
+        %a{href:"javascript:void(0)", class:"comments_toggler"} 展开评论
+        %a{href:"javascript:void(0)", class:"comments_toggler", style:"display:none;"} 收起评论
   
     %script{id: "comment_form_template", type: "text/html"}
       %form{class: "new_comment"}

@@ -19,8 +19,14 @@
       %span.cell <%= cell %>
       
     %script{id: "contact_section_template", type: "text/html"}
-      %h3.alphabet <%= alphabet %>
-      %ul
+      %h3.alphabet 
+        %a{href:"javascript:void(0)", class:"contacts_toggler"} 
+          <%= alphabet %>
+          %span.hint 点击收起
+        %a{href:"javascript:void(0)", class:"contacts_toggler", style:"display:none;"} 
+          <%= alphabet %>
+          %span.hint 点击展开
+      %ul.contact_section_list
       
     %script{id: "contact_full_template", type: "text/html"}
       != "<img src='<%= avatar_url %>' />"

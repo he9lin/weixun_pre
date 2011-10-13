@@ -19,7 +19,7 @@
       template:  _.template($("#contact_section_template").html()),
       
       events: {
-        'click h3.alphabet': 'toggleContactSection'
+        'click h3.alphabet a': 'toggleContactSection'
       },
       
       initialize: function() {
@@ -27,7 +27,8 @@
       },
       
       toggleContactSection: function(e) {
-        $(e.target).siblings('ul').toggle();
+        this.$('ul.contact_section_list').toggle();
+        this.$('h3.alphabet a').toggle();
       },
       
       render: function() {

@@ -70,7 +70,7 @@ describe("Author", function() {
   
   it("displays a default avatar if it's missing", function() {
     this.author = new Author({});
-    expect(this.author.get("avatar_url")).toEqual("assets/images/avatar/missing.png");
+    expect(this.author.get("avatar_url")).toEqual("assets/images/avatars/missing.png");
   });
   
 });
@@ -218,6 +218,6 @@ describe("Contact", function() {
   });
   
   it("defaults to missing png for avatar url", function() {
-    expect(this.contact.get("avatar_url")).toEqual("assets/images/avatar/missing.png");
+    expect(this.contact.get("avatar_url")).toEqual("assets/images/avatars/missing.png");
   });
 });

@@ -7,6 +7,10 @@ section.contact_details {
 }
 
 article.contact {
+  img {
+    width: 80px;
+    height: 80px;
+  }
   span.title {
     color: $meta-color;
     font-size: 0.9em;
@@ -32,7 +36,7 @@ section.contacts_book {
   height: 500px;
   .contact_section {
     padding-right: 20px;
-    h3.alphabet {
+    h3.alphabet a {
       line-height: 30px;
       background-color: #EEE;
       height: 30px;
@@ -41,6 +45,8 @@ section.contacts_book {
       color: #999;
       font-size: 1.2em;
       cursor: pointer;
+      display: block;
+      span.hint { font-size: 0.9em; color: #ccc; }
     }
     ul {
       padding: 2px;

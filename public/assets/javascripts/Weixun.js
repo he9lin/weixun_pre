@@ -2,7 +2,7 @@
   window.Contact = Backbone.Model.extend({
     defaults: {
       alphabet: "A",
-      avatar_url: "assets/images/avatar/missing.png",
+      avatar_url: "assets/images/avatars/missing.png",
     }
   });  
   
@@ -87,7 +87,7 @@
 
   window.Author = Backbone.Model.extend({
     defaults: {
-      avatar_url: "assets/images/avatar/missing.png"
+      avatar_url: "assets/images/avatars/missing.png"
     }
   });
   

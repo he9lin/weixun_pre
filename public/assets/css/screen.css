@@ -59,63 +59,74 @@ a img {
 
 /* line 4, ../../../scss/partials/_feeds.scss */
 li.feed {
-  padding: 10px;
+  padding: 8px;
   border-bottom: 1px dashed #cccccc;
+  margin-top: 4px;
 }
 /* line 8, ../../../scss/partials/_feeds.scss */
+li.feed.text {
+  background: url(../images/user_comment.png) top right no-repeat;
+}
+/* line 11, ../../../scss/partials/_feeds.scss */
+li.feed.photo {
+  background: url(../images/camera_picture.png) top right no-repeat;
+}
+/* line 14, ../../../scss/partials/_feeds.scss */
 li.feed a.comments_toggler {
   float: right;
 }
-/* line 11, ../../../scss/partials/_feeds.scss */
+/* line 17, ../../../scss/partials/_feeds.scss */
 li.feed img.avatar {
   float: left;
   width: 60px;
   height: 60px;
   padding: 2px;
   border: 1px solid #CCC;
+  margin-right: 10px;
 }
-/* line 18, ../../../scss/partials/_feeds.scss */
-li.feed .feed_content, li.feed .feed_meta, li.feed ul.comments {
-  margin-left: 80px;
-}
-/* line 21, ../../../scss/partials/_feeds.scss */
-li.feed .feed_meta {
-  color: #b3b3b3;
+/* line 26, ../../../scss/partials/_feeds.scss */
+li.feed p.feed_content {
   margin-bottom: 0.5em;
 }
+/* line 29, ../../../scss/partials/_feeds.scss */
+li.feed .feed_meta {
+  color: #b3b3b3;
+  line-height: 2em;
+  margin-bottom: 0.2em;
+}
 
-/* line 30, ../../../scss/partials/_feeds.scss */
+/* line 39, ../../../scss/partials/_feeds.scss */
 ul.comments li.comment {
   background-color: #e2f9f9;
   margin-bottom: 3px;
   width: 430px;
 }
-/* line 34, ../../../scss/partials/_feeds.scss */
+/* line 43, ../../../scss/partials/_feeds.scss */
 ul.comments li.comment p {
   padding: 8px;
   color: #666666;
 }
 
-/* line 45, ../../../scss/partials/_feeds.scss */
+/* line 54, ../../../scss/partials/_feeds.scss */
 form.new_comment .reply_t, form.new_comment .reply_c, form.new_comment .reply_b {
   width: 430px;
 }
-/* line 46, ../../../scss/partials/_feeds.scss */
+/* line 55, ../../../scss/partials/_feeds.scss */
 form.new_comment .reply_t {
   height: 16px;
   background: url(../images/reply_bg_t.png) no-repeat;
 }
-/* line 50, ../../../scss/partials/_feeds.scss */
+/* line 59, ../../../scss/partials/_feeds.scss */
 form.new_comment .reply_c {
   background: url(../images/reply_bg_c.png) repeat-y;
 }
-/* line 53, ../../../scss/partials/_feeds.scss */
+/* line 62, ../../../scss/partials/_feeds.scss */
 form.new_comment .reply_b {
   height: 8px;
   margin-bottom: 0.6em;
   background: url(../images/reply_bg_b.png) no-repeat;
 }
-/* line 58, ../../../scss/partials/_feeds.scss */
+/* line 67, ../../../scss/partials/_feeds.scss */
 form.new_comment textarea {
   width: 388px;
   margin: 0;
@@ -127,7 +138,7 @@ form.new_comment textarea {
   height: 50px;
   margin-bottom: 0.3em;
 }
-/* line 69, ../../../scss/partials/_feeds.scss */
+/* line 78, ../../../scss/partials/_feeds.scss */
 form.new_comment input[type=submit] {
   width: 54px;
   height: 24px;
@@ -137,13 +148,13 @@ form.new_comment input[type=submit] {
   margin-left: 365px;
 }
 
-/* line 79, ../../../scss/partials/_feeds.scss */
+/* line 88, ../../../scss/partials/_feeds.scss */
 form.new_feed {
   background-color: #e2f9f9;
   padding: 8px;
   height: 74px;
 }
-/* line 83, ../../../scss/partials/_feeds.scss */
+/* line 92, ../../../scss/partials/_feeds.scss */
 form.new_feed textarea {
   width: 75%;
   margin: 0;
@@ -152,7 +163,7 @@ form.new_feed textarea {
   border: 1px solid #cccccc;
   height: 50px;
 }
-/* line 91, ../../../scss/partials/_feeds.scss */
+/* line 100, ../../../scss/partials/_feeds.scss */
 form.new_feed input[type=submit] {
   width: 104px;
   height: 39px;
@@ -164,22 +175,22 @@ form.new_feed input[type=submit] {
   cursor: pointer;
   background: url(../images/btn_share.png) top left no-repeat;
 }
-/* line 101, ../../../scss/partials/_feeds.scss */
+/* line 110, ../../../scss/partials/_feeds.scss */
 form.new_feed input[type=submit]:hover {
   background-position: 0 -39px;
 }
 
-/* line 107, ../../../scss/partials/_feeds.scss */
+/* line 116, ../../../scss/partials/_feeds.scss */
 #content.feeds header#content_header h2 {
   background: url(../images/head_talking.png) center left no-repeat;
 }
 
-/* line 111, ../../../scss/partials/_feeds.scss */
+/* line 120, ../../../scss/partials/_feeds.scss */
 body #container #content.books #secondary section.related_books h3 {
   margin-bottom: 0;
 }
 
-/* line 113, ../../../scss/partials/_feeds.scss */
+/* line 122, ../../../scss/partials/_feeds.scss */
 section.feeds {
   padding: 0 8px;
 }
@@ -308,27 +319,32 @@ section.related_books ul.books li.book span {
 }
 
 /* line 10, ../../../scss/partials/_contacts.scss */
+article.contact img {
+  width: 80px;
+  height: 80px;
+}
+/* line 14, ../../../scss/partials/_contacts.scss */
 article.contact span.title {
   color: #b3b3b3;
   font-size: 0.9em;
   display: block;
 }
-/* line 16, ../../../scss/partials/_contacts.scss */
+/* line 20, ../../../scss/partials/_contacts.scss */
 article.contact ul.details li {
   line-height: 16px;
   text-indent: 20px;
   margin: 3px 0;
 }
-/* line 20, ../../../scss/partials/_contacts.scss */
+/* line 24, ../../../scss/partials/_contacts.scss */
 article.contact ul.details li.email {
   background: url(../images/email.png) no-repeat;
 }
-/* line 21, ../../../scss/partials/_contacts.scss */
+/* line 25, ../../../scss/partials/_contacts.scss */
 article.contact ul.details li.cell {
   background: url(../images/phone.png) no-repeat;
 }
 
-/* line 26, ../../../scss/partials/_contacts.scss */
+/* line 30, ../../../scss/partials/_contacts.scss */
 #content.contacts {
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -337,17 +353,17 @@ article.contact ul.details li.cell {
   user-select: none;
 }
 
-/* line 30, ../../../scss/partials/_contacts.scss */
+/* line 34, ../../../scss/partials/_contacts.scss */
 section.contacts_book {
   overflow: scroll;
   height: 500px;
 }
-/* line 33, ../../../scss/partials/_contacts.scss */
+/* line 37, ../../../scss/partials/_contacts.scss */
 section.contacts_book .contact_section {
   padding-right: 20px;
 }
-/* line 35, ../../../scss/partials/_contacts.scss */
-section.contacts_book .contact_section h3.alphabet {
+/* line 39, ../../../scss/partials/_contacts.scss */
+section.contacts_book .contact_section h3.alphabet a {
   line-height: 30px;
   background-color: #EEE;
   height: 30px;
@@ -356,25 +372,31 @@ section.contacts_book .contact_section h3.alphabet {
   color: #999;
   font-size: 1.2em;
   cursor: pointer;
+  display: block;
 }
-/* line 45, ../../../scss/partials/_contacts.scss */
+/* line 49, ../../../scss/partials/_contacts.scss */
+section.contacts_book .contact_section h3.alphabet a span.hint {
+  font-size: 0.9em;
+  color: #ccc;
+}
+/* line 51, ../../../scss/partials/_contacts.scss */
 section.contacts_book .contact_section ul {
   padding: 2px;
 }
-/* line 47, ../../../scss/partials/_contacts.scss */
+/* line 53, ../../../scss/partials/_contacts.scss */
 section.contacts_book .contact_section ul li.contact {
   padding: 8px;
   border-bottom: 1px dashed #cccccc;
 }
-/* line 50, ../../../scss/partials/_contacts.scss */
+/* line 56, ../../../scss/partials/_contacts.scss */
 section.contacts_book .contact_section ul li.contact:last-child {
   border: none;
 }
-/* line 51, ../../../scss/partials/_contacts.scss */
+/* line 57, ../../../scss/partials/_contacts.scss */
 section.contacts_book .contact_section ul li.contact:hover {
   background-color: #f2f2f2;
 }
-/* line 52, ../../../scss/partials/_contacts.scss */
+/* line 58, ../../../scss/partials/_contacts.scss */
 section.contacts_book .contact_section ul li.contact img {
   width: 50px;
   height: 50px;
@@ -382,23 +404,23 @@ section.contacts_book .contact_section ul li.contact img {
   border: 1px solid #cccccc;
   margin-right: 10px;
 }
-/* line 59, ../../../scss/partials/_contacts.scss */
+/* line 65, ../../../scss/partials/_contacts.scss */
 section.contacts_book .contact_section ul li.contact > span {
   vertical-align: top;
   line-height: 50px;
 }
-/* line 63, ../../../scss/partials/_contacts.scss */
+/* line 69, ../../../scss/partials/_contacts.scss */
 section.contacts_book .contact_section ul li.contact span.name {
   font-size: 1.3em;
 }
-/* line 66, ../../../scss/partials/_contacts.scss */
+/* line 72, ../../../scss/partials/_contacts.scss */
 section.contacts_book .contact_section ul li.contact span.title {
   font-size: 1.1em;
   color: #b3b3b3;
   position: relative;
   top: 1px;
 }
-/* line 72, ../../../scss/partials/_contacts.scss */
+/* line 78, ../../../scss/partials/_contacts.scss */
 section.contacts_book .contact_section ul li.contact span.cell {
   font-size: 1.3em;
   color: #666666;
@@ -667,5 +689,5 @@ body.two_col #secondary {
   float: left;
   margin-right: 0;
   padding-right: 37.75px;
-  width: 244.25px;
+  width: 246px;
 }

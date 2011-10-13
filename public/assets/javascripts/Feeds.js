@@ -6,19 +6,25 @@
       template:  _.template($("#feed_template").html()),
       
       events: {
-        'click a.comments_toggler': 'toggleComments'
+        'click a.comments_toggler': 'toggleComments',
+        'click img.feed_photo': 'togglePhoto'
       },
 
       initialize: function() {
-        _.bindAll(this, 'render', 'toggleComments');
+        _.bindAll(this, 'render', 'toggleComments', 'togglePhoto');
+      },
+      
+      togglePhoto: function() {
+        this.$('img.feed_photo').toggle();
       },
       
       toggleComments: function() {
         this.$('ul.comments').toggle();
+        this.$('a.comments_toggler').toggle();
       },
 
       render: function() {
-        $(this.el).html(this.template(this.model.toJSON()));
+        $(this.el).html(this.template(this.model.toJSON())).addClass(this.model.get('type'));
         var commentsView = new CommentsView({collection: this.model.comments});
         $(this.el).append(commentsView.render().el);
         this.$('ul.comments').hide();
@@ -156,7 +162,7 @@
       content: content,
       author: {
         name: "Davis",
-        avatar_url: "assets/images/avatar/missing.png"
+        avatar_url: "assets/images/avatars/missing.png"
       },
     }, {
       at: 0

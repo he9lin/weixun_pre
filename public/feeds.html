@@ -25,9 +25,14 @@
         <span class='author'><%= author.name %></span>
         <%= content %>
       </p>
+      <% if(type == 'photo') { %>
+      <img src='<%= photo_thumb_url %>' class='feed_photo'　title='点击看大图'/>
+      <img src='<%= photo_url %>' class='feed_photo' style='display: none;'/>
+      <% } %>
       <div class='feed_meta clear'>
         <span class='time'><%= (timestamp == 'Just now') ? "几秒钟之前" : timestamp %></span>
-        <a class='comments_toggler' href='javascript:void(0)'>评论</a>
+        <a class='comments_toggler' href='javascript:void(0)'>展开评论</a>
+        <a class='comments_toggler' href='javascript:void(0)' style='display:none;'>收起评论</a>
       </div>
     </script>
     <script id='comment_form_template' type='text/html'>

@@ -19,8 +19,17 @@
       <span class='cell'><%= cell %></span>
     </script>
     <script id='contact_section_template' type='text/html'>
-      <h3 class='alphabet'><%= alphabet %></h3>
-      <ul></ul>
+      <h3 class='alphabet'>
+        <a class='contacts_toggler' href='javascript:void(0)'>
+          <%= alphabet %>
+          <span class='hint'>点击收起</span>
+        </a>
+        <a class='contacts_toggler' href='javascript:void(0)' style='display:none;'>
+          <%= alphabet %>
+          <span class='hint'>点击展开</span>
+        </a>
+      </h3>
+      <ul class='contact_section_list'></ul>
     </script>
     <script id='contact_full_template' type='text/html'>
       <img src='<%= avatar_url %>' />

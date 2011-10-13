@@ -96,6 +96,11 @@ describe("Feed", function() {
     expect(this.feed.get("type")).toEqual("text");
   });
   
+  it("defaults timestamp as just now", function() {
+    this.feed = new Feed({});
+    expect(this.feed.get("timestamp")).toEqual("Just now");
+  });
+  
   it("has different types", function() {
     this.feed = new Feed(feedVideoData[0]);
     expect(this.feed.get("type")).toEqual("video");

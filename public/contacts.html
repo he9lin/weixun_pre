@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset='utf-8' />
+    <title>通讯录</title>
+    <link href='assets/css/screen.css' media='screen, projection' rel='stylesheet' type='text/css' />
     <script src='assets/javascripts/vendor/jquery-1.6.4.min.js' type='text/javascript'></script>
     <script src='assets/javascripts/vendor/json2.js' type='text/javascript'></script>
     <script src='assets/javascripts/vendor/underscore.js' type='text/javascript'></script>
@@ -21,8 +24,10 @@
     </script>
     <script id='contact_full_template' type='text/html'>
       <img src='<%= avatar_url %>' />
-      <h3><%= name %></h3>
-      <span><%= title %></span>
+      <h3>
+        <%= name %>
+        <span class='title'><%= title %></span>
+      </h3>
       <ul class='details'>
         <li class='cell'><%= cell %></li>
         <li class='email'><%= email %></li>
@@ -39,22 +44,39 @@
       //]]>
     </script>
   </head>
-  <body>
+  <body class='two_col'>
     <div id='container'>
-      <header>
+      <header id='main_header'>
+        <h1 id='logo'>微讯</h1>
         <nav>
           <ul>
             <li>
-              <a>Online Courses</a>
+              <a class='' href='index.html'>在线课堂</a>
             </li>
             <li>
-              <a>Ebooks</a>
+              <a class='' href='books.html'>电子书</a>
+            </li>
+            <li>
+              <a class='' href='feeds.html'>友情天地</a>
+            </li>
+            <li>
+              <a class='current' href='contacts.html'>通讯录</a>
             </li>
           </ul>
         </nav>
       </header>
-      <div id='main'></div>
-      <div id='secondary'></div>
+      <div class='contacts' id='content'>
+        <header id='content_header'>
+          <h2>通讯录</h2>
+        </header>
+        <div id='content_container'>
+          <div id='main'></div>
+          <div id='secondary'>
+            <section class='contact_details'></section>
+          </div>
+        </div>
+        <footer id='content_footer'></footer>
+      </div>
     </div>
   </body>
 </html>

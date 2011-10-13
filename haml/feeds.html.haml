@@ -1,0 +1,72 @@
+!!! 5
+%html
+  %head
+    %meta{charset: "utf-8"}
+    %link{href: "assets/css/screen.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}
+
+    - ["jquery-1.6.4.min", "json2", "underscore", "backbone", "backbone-localstorage"].each do |f|
+      %script{type: "text/javascript", src: "assets/javascripts/vendor/#{f}.js"}
+      
+    - ["SampleData", "Weixun", "Authors", "Feeds"].each do |f|
+      %script{type: "text/javascript", src: "assets/javascripts/#{f}.js"}
+      
+    %script{id: "feeds_template", type: "text/html"}
+      %form{class: "new_feed"}
+        %textarea{name: "feed[content]", placeholder: "分享点什么给大家..."}
+        %input{type: "submit", value: "Share"}
+      %ul.feed_list
+      
+    %script{id: "feed_template", type: "text/html"}
+      != "<img src='<%= author.avatar_url %>' class='avatar'/>"
+      %p.feed_content
+        %span.author <%= author.name %>
+        <%= content %>
+      .feed_meta.clear
+        %span.time <%= (timestamp == 'Just now') ? "几秒钟之前" : timestamp %>
+        %a{href:"javascript:void(0)", class:"comments_toggler"} 评论
+  
+    %script{id: "comment_form_template", type: "text/html"}
+      %form{class: "new_comment"}
+        .reply_t
+        .reply_c
+          %textarea{name: "comment[content]"}
+          %input{type: "submit", value: "Reply"}
+        .reply_b
+      
+    %script{id: "comment_template", type: "text/html"}
+      %p
+        %span.author <%= author.name %>
+        <%= content %>
+      
+    %script{id: "author_template", type: "text/html"}
+      != "<img src='<%= avatar_url %>' />"
+      %span.author <%= name %>
+      
+    :javascript
+      $(function() {
+        window.feeds = new Feeds(window.SampleData.feeds);
+        window.feedsView = new FeedsView({collection: window.feeds});
+        $("#main").append(window.feedsView.render().el);
+        
+        window.authors = new Authors(window.SampleData.authors);
+        window.authorsView = new AuthorsView({collection: window.authors});
+        $("#secondary section.friends").append(window.authorsView.render().el);
+      });
+  %body.two_col
+    #container
+      %header#main_header
+        %h1#logo  微讯
+        %nav
+          %ul
+            - [['在线课堂', 'index'], ['电子书', 'books'], ['友情天地', 'feeds', true], ['通讯录', 'contacts']].each do |item|
+              %li
+                %a{href: "#{item[1]}.html", class: "#{item[2] ? 'current' : ''}"}= item[0]
+      #content.feeds
+        %header#content_header
+          %h2 谈天说地
+        #content_container
+          #main
+          #secondary
+            %section.friends
+              %h3 我的好友
+        %footer#content_footer

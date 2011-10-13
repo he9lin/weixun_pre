@@ -1,0 +1,145 @@
+@import "blueprint/reset";
+@import "partials/base";
+
+@import "blueprint";
+@import "blueprint/scaffolding";
+
+@import "partials/colors";
+@import "partials/feeds";
+@import "partials/authors";
+@import "partials/books";
+@import "partials/contacts";
+@import "partials/videos";
+
+// To generate css equivalent to the blueprint css but with your
+// configuration applied, uncomment:
+// @include blueprint
+
+// If you are doing a lot of stylesheet concatenation, it is suggested
+// that you scope your blueprint styles, so that you can better control
+// what pages use blueprint when stylesheets are concatenated together.
+body {
+  a {
+    text-decoration: none;
+    @include link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color); 
+  }
+  @include normal-text;
+  @include blueprint-debug;
+  font-size: 13px;
+}
+
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+.clear { clear: both; }
+
+
+#section.friends h3 {
+  background: url(../images/user_comment.png) top left no-repeat;
+}
+
+body { 
+  background: url(../images/bg.jpg);
+  
+  ul { list-style: none; }
+  span.author { color: $link-color; }
+  
+  #container { 
+    @include container;
+    #content {
+      $content-width: 896px;
+      width: $content-width;
+      margin: 0 auto;
+      header#content_header {
+        $content-header-height: 60px;
+        height: $content-header-height;
+        line-height: $content-header-height;
+        background: url(../images/container_t.png) no-repeat;
+        h2 {
+          height: 60px;
+          text-indent: 20px;
+          margin-left: 30px;
+          font-weight: bold;
+          font-size: 1.2em;
+        }
+      }
+      #content_container {
+        padding-top: 10px;
+        background: url(../images/container_c.png) repeat-y;
+        float: left;
+      }
+      footer#content_footer {
+        height: 38px;
+        clear: both;
+        background: url(../images/container_b.png) no-repeat;
+      }
+      #secondary section {
+        h3 {
+          color: $quiet-color;
+          border-bottom: 1px solid $border-color;
+          font-size: 1.2em;
+          line-height: 1.6em;
+          margin-bottom: 0.6em;
+        }
+      }
+    }
+  }
+  header#main_header {
+    $nav-width: 418px;
+    height: 100px;
+    h1#logo {
+      float: left;
+      font-size: 3.5em;
+      font-weight: bold;
+      color: #aaa;
+      margin-left: 100px;
+      opacity: 0.5;
+    }
+    nav {
+      width: 418px;
+      height: 56px;
+      margin: 0 auto;
+      background: url(../images/navbg.png);
+      ul {
+        margin-left: 20px;
+        li {
+          float: left; 
+          text-align: center;
+          width: 94px;
+          a {
+            font-size: 1.1em;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            line-height: 50px;
+            height: 56px;
+            &.current { text-decoration: underline; }
+            &:hover {
+              background: url(../images/nav.png) no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.two_col {
+  #header, #footer {
+    @include column($blueprint-grid-columns);
+  }
+  #main {
+    $content-columns: ceil(2 * $blueprint-grid-columns / 3);
+    @include prepend(0.5);
+    @include column($content-columns - 0.5); 
+    border-right: 1px solid $border-color;
+  }
+  #secondary {
+    // $sidebar-columns: floor($blueprint-grid-columns / 3);
+    // @include column($sidebar-columns - 1, true); 
+    // @include append(1);
+    display: inline;
+    float: left;
+    margin-right: 0;
+    padding-right: 37.75px;
+    width: 244.25px;
+  }
+}

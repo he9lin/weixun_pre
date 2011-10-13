@@ -1,4 +1,30 @@
 window.SampleData = {
+  videos: [
+    {
+      title: "耶鲁公开课",
+      cover_thumb_url: "assets/images/avatar/missing.png",
+      author_name: "Shit",
+      summary: "Shittty"
+    },
+    {
+      title: "麻省理工公开课",
+      cover_thumb_url: "assets/images/avatar/missing.png",
+      author_name: "Shit",
+      summary: "Shittty"
+    },
+    {
+      title: "麻省理工公开课2",
+      cover_thumb_url: "assets/images/avatar/missing.png",
+      author_name: "Shit",
+      summary: "Shittty"
+    },
+    {
+      title: "麻省理工公开课3",
+      cover_thumb_url: "assets/images/avatar/missing.png",
+      author_name: "Shit",
+      summary: "Shittty"
+    },
+  ],
   contacts: [
     {
       name: 'Biz Stone',
@@ -13,6 +39,13 @@ window.SampleData = {
       alphabet: 'B',
       cell: '123456789',
       email: 'bill.gates@microsoft.com',
+    },
+    {
+      name: 'Michael Bleigh',
+      title: 'Intridea',
+      alphabet: 'M',
+      cell: '123456789',
+      email: 'mbleigh@intridea.com',
     },
     {
       name: 'Alan Greenspan',
@@ -34,21 +67,24 @@ window.SampleData = {
       timestamp: "2011-11-18 08:37:00",
       content: "A wonderful life.",
       author: {
-        name: "Davis"
+        name: "Davis",
+        avatar_url: "assets/images/avatar/missing.png"
       },
       comments: [
         {
           timestamp: "2011-11-18 08:37:15",
           content: "Yes, it is.",
           author: {
-            name: "Maggie"
+            name: "Maggie",
+            avatar_url: "assets/images/avatar/missing.png"
           },
         },
         {
           timestamp: "2011-11-18 08:37:35",
           content: "Sure...",
           author: {
-            name: "Lisa"
+            name: "Lisa",
+            avatar_url: "assets/images/avatar/missing.png"
           },
         },
       ]
@@ -57,21 +93,24 @@ window.SampleData = {
       timestamp: "2011-11-18 08:37:00",
       content: "A wonderful life.",
       author: {
-        name: "Davis"
+        name: "Davis",
+        avatar_url: "assets/images/avatar/missing.png"
       },
       comments: [
         {
           timestamp: "2011-11-18 08:37:15",
           content: "Yes, it is.",
           author: {
-            name: "Maggie"
+            name: "Maggie",
+            avatar_url: "assets/images/avatar/missing.png"
           },
         },
         {
           timestamp: "2011-11-18 08:37:35",
           content: "Sure...",
           author: {
-            name: "Lisa"
+            name: "Lisa",
+            avatar_url: "assets/images/avatar/missing.png"
           },
         },
       ]
@@ -83,6 +122,15 @@ window.SampleData = {
     },
     {
       name: "Maggie",
+    },
+    {
+      name: "Carl",
+    },
+    {
+      name: "Lisa",
+    },
+    {
+      name: "Jobs",
     },
   ],
   books: [

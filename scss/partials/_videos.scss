@@ -1,0 +1,57 @@
+#video_container {
+  width: 510px;
+  height: 440px;
+}
+
+article.video {
+  h3.title {
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    line-height: 40px;
+    font-size: 1.4em;
+    color: #069;
+    margin-bottom: 0.6em;
+  }
+  ul.details {
+    margin-bottom: 1em;
+    color: $quiet-color;
+  }
+}
+
+body #container #content_container section.related_videos {
+  @include column($blueprint-grid-columns - 1, true);
+  @include prepend(0.5);
+  @include append(0.5);
+  margin-top: 10px;
+  header {
+    border-top: 1px solid $border-color;
+    padding-top: 8px;
+    h3 {
+      font-size: 1.3em;
+      border-bottom: 3px solid #e10;
+      display: inline-block;
+      margin-bottom: 0.6em;
+      line-height: 25px;
+    }
+  }
+  ul.videos {
+    li.video {
+      float: left;
+      margin-right: 20px;
+      text-align: center;
+      h4.title { color: $quiet-color; }
+      span.author { color: $meta-color; }
+      &:hover { 
+        img {
+          border-color: $link-color;
+        }
+      }
+      img { 
+        width: 120px;
+        height: 80px;
+        padding: 2px;
+        border: 1px solid $border-color;
+      }
+    }
+  }
+}

@@ -27,7 +27,7 @@
       },
       
       toggleContactSection: function(e) {
-        $(e.target).siblings('ul').slideToggle();
+        $(e.target).siblings('ul').toggle();
       },
       
       render: function() {
@@ -74,7 +74,7 @@
       
       updateContact: function() {
         var view = new ContactFullView({model: this.player.currentItem()});
-        $('#secondary').html(view.render().el);
+        $('#secondary section.contact_details').html(view.render().el);
       },
       
       render: function() {

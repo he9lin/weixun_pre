@@ -4,15 +4,24 @@
       tagName:   'li',
       className: 'feed',
       template:  _.template($("#feed_template").html()),
+      
+      events: {
+        'click a.comments_toggler': 'toggleComments'
+      },
 
       initialize: function() {
-        _.bindAll(this, 'render');
+        _.bindAll(this, 'render', 'toggleComments');
+      },
+      
+      toggleComments: function() {
+        this.$('ul.comments').toggle();
       },
 
       render: function() {
         $(this.el).html(this.template(this.model.toJSON()));
         var commentsView = new CommentsView({collection: this.model.comments});
         $(this.el).append(commentsView.render().el);
+        this.$('ul.comments').hide();
         return this;
       },
     });
@@ -88,28 +97,25 @@
       addOne: function(comment) {
         var view = new CommentView({ model: comment }),
           viewEle = view.render().el;
-        this.$('form.new_comment').before(viewEle);
+        this.$('form.new_comment').after(viewEle);
         $(viewEle).hide().slideDown();
       },
       
       render: function() {
         var commentsContainer = $(this.el);
+        commentsContainer.append(_.template($("#comment_form_template").html()));
         this.collection.each(function(comment) {
           var view = new CommentView({model: comment});
           commentsContainer.append(view.render().el);
         });
-        commentsContainer.append(_.template($("#comment_form_template").html()));
         return this;
       },
     });
   });
   
-  
-  
   // Create a jquery form, that checks for blankness of inputs
   // and resets inputs after submit. And does the disable button
   // stuff like rails js
-  
   $('form.new_comment').live('submit', function(e) {
     var textarea = $('textarea', this),
       content = $.trim(textarea.val());
@@ -149,7 +155,8 @@
     window.feeds.add({
       content: content,
       author: {
-        name: "Davis"
+        name: "Davis",
+        avatar_url: "assets/images/avatar/missing.png"
       },
     }, {
       at: 0

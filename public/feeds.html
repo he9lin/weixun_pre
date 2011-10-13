@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <link href='assets/css/screen.css' media='screen, projection' rel='stylesheet' type='text/css' />
+    <script src='assets/javascripts/vendor/jquery-1.6.4.min.js' type='text/javascript'></script>
+    <script src='assets/javascripts/vendor/json2.js' type='text/javascript'></script>
+    <script src='assets/javascripts/vendor/underscore.js' type='text/javascript'></script>
+    <script src='assets/javascripts/vendor/backbone.js' type='text/javascript'></script>
+    <script src='assets/javascripts/vendor/backbone-localstorage.js' type='text/javascript'></script>
+    <script src='assets/javascripts/SampleData.js' type='text/javascript'></script>
+    <script src='assets/javascripts/Weixun.js' type='text/javascript'></script>
+    <script src='assets/javascripts/Authors.js' type='text/javascript'></script>
+    <script src='assets/javascripts/Feeds.js' type='text/javascript'></script>
+    <script id='feeds_template' type='text/html'>
+      <form class='new_feed'>
+        <textarea name='feed[content]' placeholder='分享点什么给大家...'></textarea>
+        <input type='submit' value='Share' />
+      </form>
+      <ul class='feed_list'></ul>
+    </script>
+    <script id='feed_template' type='text/html'>
+      <img src='<%= author.avatar_url %>' class='avatar'/>
+      <p class='feed_content'>
+        <span class='author'><%= author.name %></span>
+        <%= content %>
+      </p>
+      <div class='feed_meta clear'>
+        <span class='time'><%= (timestamp == 'Just now') ? "几秒钟之前" : timestamp %></span>
+        <a class='comments_toggler' href='javascript:void(0)'>评论</a>
+      </div>
+    </script>
+    <script id='comment_form_template' type='text/html'>
+      <form class='new_comment'>
+        <div class='reply_t'></div>
+        <div class='reply_c'>
+          <textarea name='comment[content]'></textarea>
+          <input type='submit' value='Reply' />
+        </div>
+        <div class='reply_b'></div>
+      </form>
+    </script>
+    <script id='comment_template' type='text/html'>
+      <p>
+        <span class='author'><%= author.name %></span>
+        <%= content %>
+      </p>
+    </script>
+    <script id='author_template' type='text/html'>
+      <img src='<%= avatar_url %>' />
+      <span class='author'><%= name %></span>
+    </script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        $(function() {
+          window.feeds = new Feeds(window.SampleData.feeds);
+          window.feedsView = new FeedsView({collection: window.feeds});
+          $("#main").append(window.feedsView.render().el);
+          
+          window.authors = new Authors(window.SampleData.authors);
+          window.authorsView = new AuthorsView({collection: window.authors});
+          $("#secondary section.friends").append(window.authorsView.render().el);
+        });
+      //]]>
+    </script>
+  </head>
+  <body class='two_col'>
+    <div id='container'>
+      <header id='main_header'>
+        <h1 id='logo'>微讯</h1>
+        <nav>
+          <ul>
+            <li>
+              <a class='' href='index.html'>在线课堂</a>
+            </li>
+            <li>
+              <a class='' href='books.html'>电子书</a>
+            </li>
+            <li>
+              <a class='current' href='feeds.html'>友情天地</a>
+            </li>
+            <li>
+              <a class='' href='contacts.html'>通讯录</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class='feeds' id='content'>
+        <header id='content_header'>
+          <h2>谈天说地</h2>
+        </header>
+        <div id='content_container'>
+          <div id='main'></div>
+          <div id='secondary'>
+            <section class='friends'>
+              <h3>我的好友</h3>
+            </section>
+          </div>
+        </div>
+        <footer id='content_footer'></footer>
+      </div>
+    </div>
+  </body>
+</html>

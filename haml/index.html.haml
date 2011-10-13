@@ -1,54 +1,59 @@
 !!! 5
 %html
   %head
+    %meta{charset: "utf-8"}
+    %title 精品课堂
+    %link{href: "assets/css/screen.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}
+  
     - ["jquery-1.6.4.min", "json2", "underscore", "backbone", "backbone-localstorage"].each do |f|
       %script{type: "text/javascript", src: "assets/javascripts/vendor/#{f}.js"}
       
-    - ["SampleData", "Weixun", "Authors", "Feeds"].each do |f|
-      %script{type: "text/javascript", src: "assets/javascripts/#{f}.js"}
-      
-    %script{id: "feeds_template", type: "text/html"}
-      %h1 Feeds
-      %form{class: "new_feed"}
-        %textarea{name: "feed[content]"}
-        %input{type: "submit", value: "Share"}
-      %ul.feed_list
-      
-    %script{id: "feed_template", type: "text/html"}  
-      %h3 <%= author.name %>
-      %p <%= content %>
-  
-    %script{id: "comment_form_template", type: "text/html"}
-      %form{class: "new_comment"}
-        %textarea{name: "comment[content]"}
-        %input{type: "submit", value: "Reply"}
-        
-    %script{id: "comment_template", type: "text/html"}
-      %h4 <%= author.name %>
-      %p <%= content %>
-      
-    %script{id: "author_template", type: "text/html"}
-      != "<img src='<%= avatar_url %>' />"
-      %span <%= name %>
+    %script{type: "text/javascript", src: "assets/javascripts/SampleData.js"}
+    %script{type: "text/javascript", src: "assets/javascripts/Weixun.js"}
+    %script{type: "text/javascript", src: "assets/javascripts/Videos.js"}
+    
+    %script{id: "video_template", type: "text/html"}
+      != "<img src='<%= cover_thumb_url %>' />"
+      %h4.title <%= title %>
+      %span.author <%= author_name %>
+    
+    %script{id: "video_full_template", type: "text/html"}
+      %h3.title <%= title %>
+      %ul.details
+        %li
+          %span.length 3:20
+        %li
+          %span.produce_time 2011年
+        %li
+          %span.type Economics
+        %li
+          %span.view_count 23132
+      %p.summary <%= summary %>
       
     :javascript
       $(function() {
-        window.feeds = new Feeds(window.SampleData.feeds);
-        window.feedsView = new FeedsView({collection: window.feeds});
-        $("#main").append(window.feedsView.render().el);
-        
-        window.authors = new Authors(window.SampleData.authors);
-        window.authorsView = new AuthorsView({collection: window.authors});
-        $("#secondary").append(window.authorsView.render().el);
+        window.videos = new Videos(window.SampleData.videos);
+        window.videoShelfView = new VideoShelfView({collection: window.videos});
+        $("#content_container section.related_videos").append(window.videoShelfView.render().el);
+        window.videoShelfView.updateVideo();
       });
-  %body
+  %body.two_col
     #container
-      %header
+      %header#main_header
+        %h1#logo  微讯
         %nav
           %ul
-            %li
-              %a Online Courses
-            %li
-              %a Ebooks
-      #main
-      #secondary
+            - [['在线课堂', 'index', true], ['电子书', 'books'], ['友情天地', 'feeds'], ['通讯录', 'contacts']].each do |item|
+              %li
+                %a{href: "#{item[1]}.html", class: "#{item[2] ? 'current' : ''}"}= item[0]
+      #content.books
+        %header#content_header
+          %h2 精品课堂
+        #content_container
+          #main
+            #video_container
+          #secondary
+          %section.related_videos
+            %header
+              %h3 相关视频
+        %footer#content_footer

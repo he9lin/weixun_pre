@@ -1,0 +1,80 @@
+#content.contacts header#content_header h2 {
+  background: url(../images/head_contact.png) center left no-repeat;
+}
+
+section.contact_details {
+  
+}
+
+article.contact {
+  span.title {
+    color: $meta-color;
+    font-size: 0.9em;
+    display: block;
+  }
+  ul.details {
+    li {
+      line-height: 16px;
+      text-indent: 20px;
+      margin: 3px 0;
+      &.email { background: url(../images/email.png) no-repeat; }
+      &.cell { background: url(../images/phone.png) no-repeat; }
+    }
+  }
+}
+
+#content.contacts {
+  @include disable-select;
+}
+
+section.contacts_book {
+  overflow: scroll;
+  height: 500px;
+  .contact_section {
+    padding-right: 20px;
+    h3.alphabet {
+      line-height: 30px;
+      background-color: #EEE;
+      height: 30px;
+      text-indent: 30px;
+      font-weight: bold;
+      color: #999;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    ul {
+      padding: 2px;
+      li.contact {
+        padding: 8px;
+        border-bottom: 1px dashed $border-color;
+        &:last-child { border: none; }
+        &:hover { background-color: #f2f2f2; }
+        img {
+          width: 50px;
+          height: 50px;
+          padding: 2px;
+          border: 1px solid $border-color;
+          margin-right: 10px;
+        }
+        > span { 
+          vertical-align: top;
+          line-height: 50px;
+        }
+        span.name {
+          font-size: 1.3em;
+        }
+        span.title {
+          font-size: 1.1em;
+          color: $meta-color;
+          position: relative;
+          top: 1px;
+        }
+        span.cell {
+          font-size: 1.3em;
+          color: $quiet-color;
+          float: right;
+        }
+      }
+    }
+  }
+}

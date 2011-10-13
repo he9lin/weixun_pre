@@ -1,0 +1,19 @@
+span.author { color: $link-color; }
+$thumb-size: 56px;
+
+ul.authors {
+  li.author {
+    float: left;
+    margin-right: 10px;
+    img {
+      width: $thumb-size;
+      height: $thumb-size;
+      display: block;
+    }
+    span.author {
+      text-align: center;
+      display: block;
+      line-height: 18px;
+    }
+  }
+}

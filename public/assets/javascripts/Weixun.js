@@ -8,6 +8,9 @@
   
   window.Contacts = Backbone.Collection.extend({ model: Contact });
   
+  window.Video = Backbone.Model.extend({});  
+  window.Videos = Backbone.Collection.extend({ model: Contact });
+  
   window.Page = Backbone.Model.extend({
     defaults: {
       url: "assets/images/pages/missing.png"
@@ -90,7 +93,8 @@
   
   window.Feed = Backbone.Model.extend({
     defaults: {
-      type: "text"
+      type: "text",
+      timestamp: "Just now",
     },
     
     initialize: function(options) {

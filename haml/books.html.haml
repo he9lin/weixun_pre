@@ -1,6 +1,10 @@
 !!! 5
 %html
   %head
+    %meta{charset: "utf-8"}
+    %title 博览群书
+    %link{href: "assets/css/screen.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}
+  
     - ["jquery-1.6.4.min", "json2", "underscore", "backbone", "backbone-localstorage"].each do |f|
       %script{type: "text/javascript", src: "assets/javascripts/vendor/#{f}.js"}
       
@@ -10,12 +14,13 @@
     
     %script{id: "book_template", type: "text/html"}
       != "<img src='<%= cover_thumb_url %>' />"
-      %h3 <%= title %>
+      %h4.title <%= title %>
       %span.author <%= author_name %>
+      .clear
     
     %script{id: "book_full_template", type: "text/html"}
-      != "<img src='<%= cover_url %>' />"
-      %h3 <%= title %>
+      != "<img class='cover' src='<%= cover_url %>' />"
+      %h3.title <%= title %>
       %p.summary <%= summary %>
       %section.pages
         %nav
@@ -24,21 +29,32 @@
         #page_container
           %img
       
+    %script{id: "author_template", type: "text/html"}
+      != "<img src='<%= avatar_url %>' />"
+      %span <%= name %>
+      
     :javascript
       $(function() {
         window.books = new Books(window.SampleData.books);
         window.bookShelfView = new BookShelfView({collection: window.books});
-        $("#secondary").append(window.bookShelfView.render().el);
+        $("#secondary section.related_books").append(window.bookShelfView.render().el);
         window.bookShelfView.updateBook();
       });
-  %body
+  %body.two_col
     #container
-      %header
+      %header#main_header
+        %h1#logo  微讯
         %nav
           %ul
-            %li
-              %a Online Courses
-            %li
-              %a Ebooks
-      #main
-      #secondary
+            - [['在线课堂', 'index'], ['电子书', 'books', true], ['友情天地', 'feeds'], ['通讯录', 'contacts']].each do |item|
+              %li
+                %a{href: "#{item[1]}.html", class: "#{item[2] ? 'current' : ''}"}= item[0]
+      #content.books
+        %header#content_header
+          %h2 博览群书
+        #content_container
+          #main
+          #secondary
+            %section.related_books
+              %h3 相关书籍
+        %footer#content_footer

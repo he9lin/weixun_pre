@@ -1,0 +1,85 @@
+$book-cover-large-height: 320px;
+$book-cover-large-width: 220px;
+
+$book-cover-thumb-height: 94px;
+$book-cover-thumb-width: 68px;
+
+article.book {
+  img.cover {
+    width: $book-cover-large-width;
+    height: $book-cover-large-height;
+    padding: 3px;
+    border: 1px solid $border-color;
+    float: left;
+    margin-right: 10px;
+  }
+  h3.title {
+    font-size: 2em;
+    margin-bottom: 0.8em;
+  }
+  p.summary {
+    color: $quiet-color;
+  }
+  section.pages {
+    clear: both;
+    padding-top: 10px;
+    #page_container {
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+      height: 450px;
+      width: 571px;
+    }
+    nav {
+      width: 573px;
+      height: 37px;
+      background: url(../images/viewheader.png);
+      text-align: center;
+      button {
+        width: 16px;
+        height: 16px;
+        border: none;
+        padding: 0; margin: 0;
+        text-indent: -5000px;
+        margin-top: 10px;
+        cursor: pointer;
+        &#prev_page { 
+          background: url(../images/arrow_left.png);
+        }
+        &#next_page {
+          background: url(../images/arrow_right.png);
+        }
+      }
+    }
+  }
+}
+
+#content.books header#content_header h2 {
+  background: url(../images/head_reading.png) center left no-repeat;
+}
+
+section.related_books {
+  ul.books {
+    li.book {
+      padding: 10px;
+      border-bottom: 1px solid $border-color;
+      &:hover, &:nth-child(2):hover { background-color: $bg-hover-color; }
+      &:nth-child(2) { background-color: $bg-alt-color; }
+      img {
+        width: $book-cover-thumb-width;
+        height: $book-cover-thumb-height;
+        padding: 3px;
+        border: 1px solid $border-color;
+        float: left;
+        margin-right: 8px;
+      }
+      h4 {
+        font-size: 1.3em;
+        margin-bottom: 0.6em;
+      }
+      span {
+        color: $quiet-color;
+      }
+    }
+  }
+}

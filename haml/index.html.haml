@@ -6,13 +6,12 @@
     %link{href: "assets/css/screen.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}
     %link{href: "assets/css/video-js.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}
   
-    - ["jquery-1.6.4.min", "json2", "underscore", "backbone", "backbone-localstorage"].each do |f|
+    - ["jquery-1.6.4.min", "json2", "underscore", "backbone", "backbone-localstorage", "video"].each do |f|
       %script{type: "text/javascript", src: "assets/javascripts/vendor/#{f}.js"}
       
     %script{type: "text/javascript", src: "assets/javascripts/SampleData.js"}
     %script{type: "text/javascript", src: "assets/javascripts/Weixun.js"}
     %script{type: "text/javascript", src: "assets/javascripts/Videos.js"}
-    %script{type: "text/javascript", src: "assets/javascripts/video.js"}
     
     %script{id: "video_template", type: "text/html"}
       != "<img src='<%= cover_thumb_url %>' />"
@@ -23,13 +22,13 @@
       %h3.title <%= title %>
       %ul.details
         %li
-          %span.length 3:20
+          %span.length 长度: 3:20
         %li
-          %span.produce_time 2011年
+          %span.produce_time 日期: 2011年
         %li
-          %span.type Economics
+          %span.type 类型: 经济
         %li
-          %span.view_count 23132
+          %span.view_count 观看次数: 23132
       %p.summary <%= summary %>
       
     :javascript
@@ -39,7 +38,6 @@
         $("#content_container section.related_videos").append(window.videoShelfView.render().el);
         window.videoShelfView.updateVideo();
         VideoJS.setupAllWhenReady();
-        
       });
   %body.two_col
     #container

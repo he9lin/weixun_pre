@@ -14,7 +14,8 @@
       
       events: {
         'click nav button#prev_page': 'previousPage',
-        'click nav button#next_page': 'nextPage'
+        'click nav button#next_page': 'nextPage',
+        'click img.page': 'nextPage'
       },
       
       initialize: function() {
@@ -41,7 +42,9 @@
       },
       
       updatePage: function() {
-        this.$('#page_container img').attr({src: this.player.currentPage().get('url')});
+        this.$('#page_container img.page').attr({src: this.player.currentPage().get('url')});
+        this.$('span#page_number').text(
+          this.player.get('currentPageIndex') + 1 + ' / ' + this.player.book.pages.length);
       },
     });
     

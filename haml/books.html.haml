@@ -25,9 +25,10 @@
       %section.pages
         %nav
           %button{id: "prev_page"} Prev
+          %span#page_number
           %button{id: "next_page"} Next
         #page_container
-          %img
+          %img.page
       
     %script{id: "author_template", type: "text/html"}
       != "<img src='<%= avatar_url %>' />"

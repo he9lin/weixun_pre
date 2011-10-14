@@ -189,32 +189,80 @@ window.SampleData = {
       summary: "筆者愛陶瓷物品，愛陶瓷的實用性與多變的造型，也愛陶瓷的一點脆弱感覺。這回帶來了一個自己很欣賞的陶瓷品牌LOVERAMICS（愛陶樂）",
       author_name: "Davis",
       timestamp: "2011-11-18 08:37:45",
-      cover_thumb_url: "assets/images/books/rdpd_thumb.png",
-      cover_url: "assets/images/books/rdpd.png",
+      cover_thumb_url: "assets/images/books/loveramics/cover_s.jpg",
+      cover_url: "assets/images/books/loveramics/cover.jpg",
       pages: [
         {
-          url: "assets/images/pages/1.png"
+          url: "assets/images/books/loveramics/pages/1.jpg"
         },
         {
-          url: "assets/images/pages/2.png"
-        }
+          url: "assets/images/books/loveramics/pages/2.jpg"
+        },
+        {
+          url: "assets/images/books/loveramics/pages/3.jpg"
+        },
+        {
+          url: "assets/images/books/loveramics/pages/4.jpg"
+        },
+        {
+          url: "assets/images/books/loveramics/pages/5.jpg"
+        },
       ]
     },
     {
-      title: "Rich Dad, Poor Dad 2",
-      sub_title: "How to get rich from the beginning",
-      summary: "The book is largely based on Kiyosaki's upbringing and education in Hawaii. The book highlights the different attitudes to money, work and life of two men, and how they in turn influenced key decisions in Kiyosaki's life.",
-      author_name: "Davis",
-      timestamp: "2011-11-18 08:37:45",
-      cover_thumb_url: "assets/images/books/rdpd_thumb.png",
-      cover_url: "assets/images/books/rdpd.png",
+      title: "俞敏洪如是说",
+      sub_title: "",
+      summary: "二十多年来，要曾被外资力量的零售、制造、网络等行业里，成长和涌现出了一批优秀的本土企业家，他们带领中国企业探索出了一条非凡的成功之路，向世界彰显了中国企业家的强大力量和独特智慧。本系列图书踏实记录并深入剖析了这些教父级的企业家创业，创新的翔实过程，为读者提供了一场关于中国企业家智慧的饕餮盛宴",
+      author_name: "宁泊",
+      produce_place: "中国经济出版社",
+      timestamp: "2008-6-1",
+      cover_thumb_url: "assets/images/books/ymh/cover_s.jpg",
+      cover_url: "assets/images/books/ymh/cover.jpg",
       pages: [
         {
-          url: "assets/images/pages/1.png"
+          url: "assets/images/books/ymh/pages/1.jpg"
         },
         {
-          url: "assets/images/pages/2.png"
-        }
+          url: "assets/images/books/ymh/pages/2.jpg"
+        },
+        {
+          url: "assets/images/books/ymh/pages/3.jpg"
+        },
+        {
+          url: "assets/images/books/ymh/pages/4.jpg"
+        },
+        {
+          url: "assets/images/books/ymh/pages/5.jpg"
+        },
+      ]
+    },
+    {
+      title: "国外休闲度假杂志 Islands",
+      sub_title: "",
+      summary: "Islands》是来自美国的岛屿旅游指南杂志，介绍岛屿有关的旅游休闲，从波拉岛到加勒比海，从塔希提岛到巴里岛，岛屿杂志是是您通往这些非凡目的地的通行证，引人入胜的每期杂志，包涵是美丽新奇的岛屿图片，迷人的当地文化，令人震撼兴奋得当地风情。",
+      author_name: "杂志",
+      timestamp: "20011-7",
+      cover_thumb_url: "assets/images/books/islands/cover_s.jpg",
+      cover_url: "assets/images/books/islands/cover.jpg",
+      pages: [
+        {
+          url: "assets/images/books/islands/pages/1.jpg"
+        },
+        {
+          url: "assets/images/books/islands/pages/2.jpg"
+        },
+        {
+          url: "assets/images/books/islands/pages/3.jpg"
+        },
+        {
+          url: "assets/images/books/islands/pages/4.jpg"
+        },
+        {
+          url: "assets/images/books/islands/pages/5.jpg"
+        },
+        {
+          url: "assets/images/books/islands/pages/6.jpg"
+        },
       ]
     },
   ]

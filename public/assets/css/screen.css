@@ -252,55 +252,61 @@ article.book section.pages #page_container {
   border-left: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc;
-  height: 450px;
   width: 571px;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #c2c2c2;
 }
-/* line 36, ../../../scss/partials/_books.scss */
+/* line 38, ../../../scss/partials/_books.scss */
+article.book section.pages span#page_number {
+  font-size: 1.1em;
+}
+/* line 41, ../../../scss/partials/_books.scss */
 article.book section.pages nav {
   width: 573px;
   height: 37px;
   background: url(../images/viewheader.png);
   text-align: center;
 }
-/* line 41, ../../../scss/partials/_books.scss */
+/* line 46, ../../../scss/partials/_books.scss */
 article.book section.pages nav button {
   width: 16px;
   height: 16px;
   border: none;
   padding: 0;
-  margin: 0;
+  margin: 0 5px;
   text-indent: -5000px;
   margin-top: 10px;
   cursor: pointer;
 }
-/* line 49, ../../../scss/partials/_books.scss */
+/* line 55, ../../../scss/partials/_books.scss */
 article.book section.pages nav button#prev_page {
   background: url(../images/arrow_left.png);
 }
-/* line 52, ../../../scss/partials/_books.scss */
+/* line 58, ../../../scss/partials/_books.scss */
 article.book section.pages nav button#next_page {
   background: url(../images/arrow_right.png);
 }
 
-/* line 60, ../../../scss/partials/_books.scss */
+/* line 66, ../../../scss/partials/_books.scss */
 #content.books header#content_header h2 {
   background: url(../images/head_reading.png) center left no-repeat;
 }
 
-/* line 66, ../../../scss/partials/_books.scss */
+/* line 72, ../../../scss/partials/_books.scss */
 section.related_books ul.books li.book {
   padding: 10px;
   border-bottom: 1px solid #cccccc;
 }
-/* line 69, ../../../scss/partials/_books.scss */
+/* line 75, ../../../scss/partials/_books.scss */
 section.related_books ul.books li.book:hover, section.related_books ul.books li.book:nth-child(2):hover {
   background-color: #f2f2f2;
 }
-/* line 70, ../../../scss/partials/_books.scss */
+/* line 76, ../../../scss/partials/_books.scss */
 section.related_books ul.books li.book:nth-child(2) {
   background-color: #e2f9f9;
 }
-/* line 71, ../../../scss/partials/_books.scss */
+/* line 77, ../../../scss/partials/_books.scss */
 section.related_books ul.books li.book img {
   width: 68px;
   height: 94px;
@@ -309,12 +315,12 @@ section.related_books ul.books li.book img {
   float: left;
   margin-right: 8px;
 }
-/* line 79, ../../../scss/partials/_books.scss */
+/* line 85, ../../../scss/partials/_books.scss */
 section.related_books ul.books li.book h4 {
   font-size: 1.3em;
   margin-bottom: 0.6em;
 }
-/* line 83, ../../../scss/partials/_books.scss */
+/* line 89, ../../../scss/partials/_books.scss */
 section.related_books ul.books li.book span {
   color: #666666;
 }

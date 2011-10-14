@@ -16,6 +16,10 @@ article.video {
     margin-bottom: 1em;
     color: $quiet-color;
   }
+  p.summary { 
+    line-height: 20px;
+    font-size: 1.1em;
+  }
 }
 
 body #container #content_container section.related_videos {

@@ -131,7 +131,7 @@
       content = $.trim(textarea.val());
     
     if (content == '') {
-      alert('Please enter something first...');
+      alert('你还没填写要回复的内容呢！');
       textarea.val('');
       e.preventDefault();
       return false;
@@ -154,7 +154,7 @@
       content = $.trim(textarea.val());
     
     if (content == '') {
-      alert('Please enter something first...');
+      alert('你还没填写要说的话呢！');
       textarea.val('');
       e.preventDefault();
       return false;

@@ -498,20 +498,21 @@ body #container #content_container section.related_videos ul.videos li.video {
   float: left;
   margin-right: 20px;
   text-align: center;
+  width: 150px;
 }
-/* line 42, ../../../scss/partials/_videos.scss */
+/* line 43, ../../../scss/partials/_videos.scss */
 body #container #content_container section.related_videos ul.videos li.video h4.title {
   color: #666666;
 }
-/* line 43, ../../../scss/partials/_videos.scss */
+/* line 44, ../../../scss/partials/_videos.scss */
 body #container #content_container section.related_videos ul.videos li.video span.author {
   color: #b3b3b3;
 }
-/* line 45, ../../../scss/partials/_videos.scss */
+/* line 46, ../../../scss/partials/_videos.scss */
 body #container #content_container section.related_videos ul.videos li.video:hover img {
   border-color: #0099e6;
 }
-/* line 49, ../../../scss/partials/_videos.scss */
+/* line 50, ../../../scss/partials/_videos.scss */
 body #container #content_container section.related_videos ul.videos li.video img {
   width: 120px;
   height: 80px;

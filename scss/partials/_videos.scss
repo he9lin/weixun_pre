@@ -39,6 +39,7 @@ body #container #content_container section.related_videos {
       float: left;
       margin-right: 20px;
       text-align: center;
+      width: 150px;
       h4.title { color: $quiet-color; }
       span.author { color: $meta-color; }
       &:hover { 

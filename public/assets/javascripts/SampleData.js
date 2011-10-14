@@ -96,6 +96,26 @@ window.SampleData = {
   ],
   feeds: [
     {
+      timestamp: "2011-11-18 08:27:00",
+      content: "这次聚会的录像,大家开开心心的，不错!",
+      author: window.SampleAuthors.A,
+      type: "video",
+      video_thumb_url: "assets/images/feeds/feed_video_1s.png",
+      video_url: "assets/videos/feed_01.mp4",
+      comments: [
+        {
+          timestamp: "2011-11-18 08:37:15",
+          content: "Haha, that's me.",
+          author: window.SampleAuthors.B,
+        },
+        {
+          timestamp: "2011-11-18 08:37:35",
+          content: "no problem...",
+          author: window.SampleAuthors.C,
+        },
+      ]
+    },
+    {
       timestamp: "2011-11-18 08:37:00",
       content: "这次聚会我不在成都，下次要叫上我哈〜一定到.",
       author: window.SampleAuthors.A,

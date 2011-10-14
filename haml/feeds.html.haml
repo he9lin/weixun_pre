@@ -4,7 +4,7 @@
     %meta{charset: "utf-8"}
     %link{href: "assets/css/screen.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}
 
-    - ["jquery-1.6.4.min", "json2", "underscore", "backbone", "backbone-localstorage"].each do |f|
+    - ["jquery-1.6.4.min", "json2", "underscore", "backbone", "backbone-localstorage", "video"].each do |f|
       %script{type: "text/javascript", src: "assets/javascripts/vendor/#{f}.js"}
       
     - ["SampleData", "Weixun", "Authors", "Feeds"].each do |f|
@@ -25,6 +25,13 @@
       != "<img src='<%= photo_thumb_url %>' class='feed_photo'　title='点击看大图'/>"
       != "<img src='<%= photo_url %>' class='feed_photo' style='display: none;'/>"
       <% } %>
+  
+      <% if(type == 'video') { %>
+      != "<img src='<%= video_thumb_url %>' class='feed_video'　title='点击看视频'/>"
+      #player_div.video-js-box
+        %video.video-js
+      <% } %>
+      
       .feed_meta.clear
         %span.time <%= (timestamp == 'Just now') ? "几秒钟之前" : timestamp %>
         %a{href:"javascript:void(0)", class:"comments_toggler"} 展开评论
@@ -46,7 +53,7 @@
     %script{id: "author_template", type: "text/html"}
       != "<img src='<%= avatar_url %>' />"
       %span.author <%= name %>
-      
+        
     :javascript
       $(function() {
         window.feeds = new Feeds(window.SampleData.feeds);
@@ -56,6 +63,9 @@
         window.authors = new Authors(window.SampleData.authors);
         window.authorsView = new AuthorsView({collection: window.authors});
         $("#secondary section.friends").append(window.authorsView.render().el);
+        
+        VideoJS.setupAllWhenReady();
+        $('video').css('height', '0px');
       });
   %body.two_col
     #container

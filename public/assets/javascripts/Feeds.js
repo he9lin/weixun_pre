@@ -7,15 +7,35 @@
       
       events: {
         'click a.comments_toggler': 'toggleComments',
-        'click img.feed_photo': 'togglePhoto'
+        'click img.feed_photo': 'togglePhoto',
+        'click img.feed_video': 'toggleVideo'
       },
 
       initialize: function() {
-        _.bindAll(this, 'render', 'toggleComments', 'togglePhoto');
+        _.bindAll(this, 'render', 'toggleComments', 'togglePhoto', 'toggleVideo');
       },
       
       togglePhoto: function() {
         this.$('img.feed_photo').toggle();
+      },
+      
+      toggleVideo: function() {
+        console.log(" show video... ");
+        
+        this.$('img.feed_video').toggle();
+        
+        var myVideo = $('video')[0];
+        this.$('video.video-js').css('height', '150px');
+        
+        myVideo.controls = 'controls';
+        myVideo.preload  = 'auto';
+        myVideo.poster   = 'assets/images/avatar/missing.png';
+        
+        myVideo.src = "assets/videos/feed_01.mp4";
+        myVideo.load();
+        myVideo.play();
+        
+        
       },
       
       toggleComments: function() {

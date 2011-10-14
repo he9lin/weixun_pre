@@ -90,8 +90,8 @@ window.SampleData = {
   feeds: [
     {
       timestamp: "2011-11-18 08:27:00",
-      content: "这次聚会的录像,大家开开心心的，不错!",
-      author: window.SampleAuthors.A,
+      content: "发现一个比姚明还要高的篮球运动员!给大家分享！",
+      author: window.SampleAuthors.D,
       type: "video",
       video_thumb_url: "assets/images/feeds/feed_video_1s.png",
       video_url: "assets/videos/feed_01.mp4",
@@ -105,6 +105,26 @@ window.SampleData = {
           timestamp: "2011-11-18 08:37:35",
           content: "no problem...",
           author: window.SampleAuthors.C,
+        },
+      ]
+    },
+    {
+      timestamp: "2011-11-18 08:35:00",
+      content: "耶鲁大学的名师给大家讲解经济学",
+      author: window.SampleAuthors.C,
+      type: "video",
+      video_thumb_url: "assets/images/feeds/feed_video_2s.png",
+      video_url: "assets/videos/1.mp4",
+      comments: [
+        {
+          timestamp: "2011-11-18 08:37:25",
+          content: "Very nice talk!",
+          author: window.SampleAuthors.A,
+        },
+        {
+          timestamp: "2011-11-18 08:37:55",
+          content: "Well, I don't think that is a big problem.",
+          author: window.SampleAuthors.D,
         },
       ]
     },

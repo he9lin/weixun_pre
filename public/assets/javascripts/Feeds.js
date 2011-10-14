@@ -20,22 +20,23 @@
       },
       
       toggleVideo: function() {
-        console.log(" show video... ");
         
         this.$('img.feed_video').toggle();
         
-        var myVideo = $('video')[0];
-        this.$('video.video-js').css('height', '150px');
+        var myVideo = this.$('video')[0];
+        var videoJS = this.$('video.video-js');
+        videoJS.css('width', '400px');
+        videoJS.css('height', '220px');
+        videoJS.addClass("playing");
         
         myVideo.controls = 'controls';
         myVideo.preload  = 'auto';
-        myVideo.poster   = 'assets/images/avatar/missing.png';
+        myVideo.poster   = this.model.get('video_thumb_url');
+        myVideo.type     = 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
         
-        myVideo.src = "assets/videos/feed_01.mp4";
+        myVideo.src = this.model.get('video_url');
         myVideo.load();
         myVideo.play();
-        
-        
       },
       
       toggleComments: function() {

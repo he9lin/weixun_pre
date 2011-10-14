@@ -21,6 +21,10 @@
       toggleComments: function() {
         this.$('ul.comments').toggle();
         this.$('a.comments_toggler').toggle();
+
+        if (this.$('form.new_comment').is(':visible')) {
+          this.$('form.new_comment textarea').focus();
+        }
       },
 
       render: function() {
@@ -53,7 +57,7 @@
           viewEle = view.render().el;
         
         $('body')[method].call(this.$("ul.feed_list"), viewEle);
-        $(viewEle).hide().slideDown();
+        $(viewEle).hide().fadeIn();
       },
     
       render: function() {
@@ -104,7 +108,7 @@
         var view = new CommentView({ model: comment }),
           viewEle = view.render().el;
         this.$('form.new_comment').after(viewEle);
-        $(viewEle).hide().slideDown();
+        $(viewEle).hide().fadeIn();
       },
       
       render: function() {
@@ -136,9 +140,7 @@
     var feedCid = $(this).closest('li.feed').attr('id').substring(5);
     window.feeds.getByCid(feedCid).comments.add({
       content: content,
-      author: {
-        name: "Davis"
-      },
+      author: window.SampleAuthors.A,
     });
     
     textarea.val('');
@@ -160,10 +162,7 @@
     
     window.feeds.add({
       content: content,
-      author: {
-        name: "Davis",
-        avatar_url: "assets/images/avatars/missing.png"
-      },
+      author: window.SampleAuthors.A,
     }, {
       at: 0
     });

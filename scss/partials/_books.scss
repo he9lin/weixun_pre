@@ -35,6 +35,9 @@ article.book {
       text-align: center;
       padding: 10px 0;
       background-color: #c2c2c2;
+      img.page {
+        height: 685px;
+      }
     }
     span#page_number {
       font-size: 1.1em;

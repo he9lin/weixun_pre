@@ -20,9 +20,7 @@
       },
       
       toggleVideo: function() {
-        
         this.$('img.feed_video').toggle();
-        
         var myVideo = this.$('video')[0];
         var videoJS = this.$('video.video-js');
         videoJS.css('width', '400px');

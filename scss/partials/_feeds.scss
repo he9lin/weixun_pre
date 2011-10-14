@@ -13,6 +13,10 @@ li.feed {
   }
   a.comments_toggler {
     float: right;
+    font-size: 0.9em;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   img.avatar {
     float: left;

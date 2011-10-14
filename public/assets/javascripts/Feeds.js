@@ -41,6 +41,10 @@
       toggleComments: function() {
         this.$('ul.comments').toggle();
         this.$('a.comments_toggler').toggle();
+
+        if (this.$('form.new_comment').is(':visible')) {
+          this.$('form.new_comment textarea').focus();
+        }
       },
 
       render: function() {
@@ -73,7 +77,7 @@
           viewEle = view.render().el;
         
         $('body')[method].call(this.$("ul.feed_list"), viewEle);
-        $(viewEle).hide().slideDown();
+        $(viewEle).hide().fadeIn();
       },
     
       render: function() {
@@ -124,7 +128,7 @@
         var view = new CommentView({ model: comment }),
           viewEle = view.render().el;
         this.$('form.new_comment').after(viewEle);
-        $(viewEle).hide().slideDown();
+        $(viewEle).hide().fadeIn();
       },
       
       render: function() {
@@ -147,7 +151,7 @@
       content = $.trim(textarea.val());
     
     if (content == '') {
-      alert('Please enter something first...');
+      alert('你还没填写要回复的内容呢！');
       textarea.val('');
       e.preventDefault();
       return false;
@@ -156,9 +160,7 @@
     var feedCid = $(this).closest('li.feed').attr('id').substring(5);
     window.feeds.getByCid(feedCid).comments.add({
       content: content,
-      author: {
-        name: "Davis"
-      },
+      author: window.SampleAuthors.A,
     });
     
     textarea.val('');
@@ -172,7 +174,7 @@
       content = $.trim(textarea.val());
     
     if (content == '') {
-      alert('Please enter something first...');
+      alert('你还没填写要说的话呢！');
       textarea.val('');
       e.preventDefault();
       return false;
@@ -180,10 +182,7 @@
     
     window.feeds.add({
       content: content,
-      author: {
-        name: "Davis",
-        avatar_url: "assets/images/avatars/missing.png"
-      },
+      author: window.SampleAuthors.A,
     }, {
       at: 0
     });

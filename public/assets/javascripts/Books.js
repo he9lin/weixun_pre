@@ -42,9 +42,13 @@
       },
       
       updatePage: function() {
-        this.$('#page_container img.page').attr({src: this.player.currentPage().get('url')});
+        var self = this;
+        this.$('#page_container img.page').fadeOut(function() {
+          $(this).attr({src: self.player.currentPage().get('url')});
+          $(this).fadeIn();
+        });
         this.$('span#page_number').text(
-          this.player.get('currentPageIndex') + 1 + ' / ' + this.player.book.pages.length);
+          this.player.get('currentPageIndex') + 1 + ' / ' + this.player.book.pages.length).focus();
       },
     });
     

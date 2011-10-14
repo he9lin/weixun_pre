@@ -24,32 +24,25 @@ window.SampleAuthors = {
 window.SampleData = {
   videos: [
     {
-      title: "耶鲁公开课",
-      cover_thumb_url: "assets/images/avatars/missing.png",
-      author_name: "Shit",
+      title: "耶鲁大学开放课程：金融市场　第一部分",
+      cover_thumb_url: "assets/images/videos/yale_1s.png",
+      author_name: "罗伯特希勒",
       link: "assets/videos/1.mp4",
-      summary: "Shittty"
+      summary: "金融机构是文明社会的重要支柱。它们为投资活动提供支持及风险管理。如果我们想要预测金融机构动态及他们在这个信息时代中的发展态势，我们必须对其业务有所了解。本课程将涉及的内容有：金融学理论、金融业的发展历程、金融机构（例如银行、保险公司、证券公司、期货公司及其他衍生市场）的优势与缺陷以及这些机构的未来发展前景。"
     },
     {
-      title: "麻省理工公开课",
-      cover_thumb_url: "assets/images/avatars/missing.png",
-      author_name: "Shit",
+      title: "耶鲁大学开放课程：金融市场　第二部分",
+      cover_thumb_url: "assets/images/videos/yale_2s.png",
+      author_name: "罗伯特希勒",
       link: "assets/videos/2.mp4",
-      summary: "Shittty"
+      summary: "金融机构是文明社会的重要支柱。它们为投资活动提供支持及风险管理。如果我们想要预测金融机构动态及他们在这个信息时代中的发展态势，我们必须对其业务有所了解。本课程将涉及的内容有：金融学理论、金融业的发展历程、金融机构（例如银行、保险公司、证券公司、期货公司及其他衍生市场）的优势与缺陷以及这些机构的未来发展前景。"
     },
     {
-      title: "麻省理工公开课2",
-      cover_thumb_url: "assets/images/avatars/missing.png",
-      author_name: "Shit",
+      title: "耶鲁大学开放课程：金融市场 第三部分",
+      cover_thumb_url: "assets/images/videos/yale_3s.png",
+      author_name: "罗伯特希勒",
       link: "assets/videos/3.mp4",
-      summary: "Shittty"
-    },
-    {
-      title: "麻省理工公开课3",
-      cover_thumb_url: "assets/images/avatars/missing.png",
-      author_name: "Shit",
-      link: "assets/videos/1.mp4",
-      summary: "Shittty"
+      summary: "金融机构是文明社会的重要支柱。它们为投资活动提供支持及风险管理。如果我们想要预测金融机构动态及他们在这个信息时代中的发展态势，我们必须对其业务有所了解。本课程将涉及的内容有：金融学理论、金融业的发展历程、金融机构（例如银行、保险公司、证券公司、期货公司及其他衍生市场）的优势与缺陷以及这些机构的未来发展前景。"
     },
   ],
   contacts: [

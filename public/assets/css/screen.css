@@ -74,8 +74,13 @@ li.feed.photo {
 /* line 14, ../../../scss/partials/_feeds.scss */
 li.feed a.comments_toggler {
   float: right;
+  font-size: 0.9em;
 }
 /* line 17, ../../../scss/partials/_feeds.scss */
+li.feed a.comments_toggler:hover {
+  text-decoration: underline;
+}
+/* line 21, ../../../scss/partials/_feeds.scss */
 li.feed img.avatar {
   float: left;
   width: 60px;
@@ -84,52 +89,52 @@ li.feed img.avatar {
   border: 1px solid #CCC;
   margin-right: 10px;
 }
-/* line 25, ../../../scss/partials/_feeds.scss */
+/* line 29, ../../../scss/partials/_feeds.scss */
 li.feed p.feed_content {
   margin-bottom: 0.5em;
   font-size: 1.1em;
   line-height: 1.3em;
   padding-right: 10px;
 }
-/* line 31, ../../../scss/partials/_feeds.scss */
+/* line 35, ../../../scss/partials/_feeds.scss */
 li.feed .feed_meta {
   color: #b3b3b3;
   line-height: 2em;
   margin-bottom: 0.2em;
 }
 
-/* line 41, ../../../scss/partials/_feeds.scss */
+/* line 45, ../../../scss/partials/_feeds.scss */
 ul.comments li.comment {
   background-color: #e2f9f9;
   margin-bottom: 3px;
   width: 430px;
 }
-/* line 45, ../../../scss/partials/_feeds.scss */
+/* line 49, ../../../scss/partials/_feeds.scss */
 ul.comments li.comment p {
   padding: 8px;
   color: #666666;
 }
 
-/* line 56, ../../../scss/partials/_feeds.scss */
+/* line 60, ../../../scss/partials/_feeds.scss */
 form.new_comment .reply_t, form.new_comment .reply_c, form.new_comment .reply_b {
   width: 430px;
 }
-/* line 57, ../../../scss/partials/_feeds.scss */
+/* line 61, ../../../scss/partials/_feeds.scss */
 form.new_comment .reply_t {
   height: 16px;
   background: url(../images/reply_bg_t.png) no-repeat;
 }
-/* line 61, ../../../scss/partials/_feeds.scss */
+/* line 65, ../../../scss/partials/_feeds.scss */
 form.new_comment .reply_c {
   background: url(../images/reply_bg_c.png) repeat-y;
 }
-/* line 64, ../../../scss/partials/_feeds.scss */
+/* line 68, ../../../scss/partials/_feeds.scss */
 form.new_comment .reply_b {
   height: 8px;
   margin-bottom: 0.6em;
   background: url(../images/reply_bg_b.png) no-repeat;
 }
-/* line 69, ../../../scss/partials/_feeds.scss */
+/* line 73, ../../../scss/partials/_feeds.scss */
 form.new_comment textarea {
   width: 388px;
   margin: 0;
@@ -141,7 +146,7 @@ form.new_comment textarea {
   height: 50px;
   margin-bottom: 0.3em;
 }
-/* line 80, ../../../scss/partials/_feeds.scss */
+/* line 84, ../../../scss/partials/_feeds.scss */
 form.new_comment input[type=submit] {
   width: 54px;
   height: 24px;
@@ -151,13 +156,13 @@ form.new_comment input[type=submit] {
   margin-left: 365px;
 }
 
-/* line 90, ../../../scss/partials/_feeds.scss */
+/* line 94, ../../../scss/partials/_feeds.scss */
 form.new_feed {
   background-color: #e2f9f9;
   padding: 8px;
   height: 74px;
 }
-/* line 94, ../../../scss/partials/_feeds.scss */
+/* line 98, ../../../scss/partials/_feeds.scss */
 form.new_feed textarea {
   width: 75%;
   margin: 0;
@@ -166,7 +171,7 @@ form.new_feed textarea {
   border: 1px solid #cccccc;
   height: 50px;
 }
-/* line 102, ../../../scss/partials/_feeds.scss */
+/* line 106, ../../../scss/partials/_feeds.scss */
 form.new_feed input[type=submit] {
   width: 104px;
   height: 39px;
@@ -178,22 +183,22 @@ form.new_feed input[type=submit] {
   cursor: pointer;
   background: url(../images/btn_share.png) top left no-repeat;
 }
-/* line 112, ../../../scss/partials/_feeds.scss */
+/* line 116, ../../../scss/partials/_feeds.scss */
 form.new_feed input[type=submit]:hover {
   background-position: 0 -39px;
 }
 
-/* line 118, ../../../scss/partials/_feeds.scss */
+/* line 122, ../../../scss/partials/_feeds.scss */
 #content.feeds header#content_header h2 {
   background: url(../images/head_talking.png) center left no-repeat;
 }
 
-/* line 122, ../../../scss/partials/_feeds.scss */
+/* line 126, ../../../scss/partials/_feeds.scss */
 body #container #content.books #secondary section.related_books h3 {
   margin-bottom: 0;
 }
 
-/* line 124, ../../../scss/partials/_feeds.scss */
+/* line 128, ../../../scss/partials/_feeds.scss */
 section.feeds {
   padding: 0 8px;
 }
@@ -253,22 +258,23 @@ article.book section.pages #page_container {
   border-right: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc;
   width: 571px;
+  height: 690px;
   text-align: center;
   padding: 10px 0;
   background-color: #c2c2c2;
 }
-/* line 38, ../../../scss/partials/_books.scss */
+/* line 39, ../../../scss/partials/_books.scss */
 article.book section.pages span#page_number {
   font-size: 1.1em;
 }
-/* line 41, ../../../scss/partials/_books.scss */
+/* line 42, ../../../scss/partials/_books.scss */
 article.book section.pages nav {
   width: 573px;
   height: 37px;
   background: url(../images/viewheader.png);
   text-align: center;
 }
-/* line 46, ../../../scss/partials/_books.scss */
+/* line 47, ../../../scss/partials/_books.scss */
 article.book section.pages nav button {
   width: 16px;
   height: 16px;
@@ -279,34 +285,34 @@ article.book section.pages nav button {
   margin-top: 10px;
   cursor: pointer;
 }
-/* line 55, ../../../scss/partials/_books.scss */
+/* line 56, ../../../scss/partials/_books.scss */
 article.book section.pages nav button#prev_page {
   background: url(../images/arrow_left.png);
 }
-/* line 58, ../../../scss/partials/_books.scss */
+/* line 59, ../../../scss/partials/_books.scss */
 article.book section.pages nav button#next_page {
   background: url(../images/arrow_right.png);
 }
 
-/* line 66, ../../../scss/partials/_books.scss */
+/* line 67, ../../../scss/partials/_books.scss */
 #content.books header#content_header h2 {
   background: url(../images/head_reading.png) center left no-repeat;
 }
 
-/* line 72, ../../../scss/partials/_books.scss */
+/* line 73, ../../../scss/partials/_books.scss */
 section.related_books ul.books li.book {
   padding: 10px;
   border-bottom: 1px solid #cccccc;
 }
-/* line 75, ../../../scss/partials/_books.scss */
+/* line 76, ../../../scss/partials/_books.scss */
 section.related_books ul.books li.book:hover, section.related_books ul.books li.book:nth-child(2):hover {
   background-color: #f2f2f2;
 }
-/* line 76, ../../../scss/partials/_books.scss */
+/* line 77, ../../../scss/partials/_books.scss */
 section.related_books ul.books li.book:nth-child(2) {
   background-color: #e2f9f9;
 }
-/* line 77, ../../../scss/partials/_books.scss */
+/* line 78, ../../../scss/partials/_books.scss */
 section.related_books ul.books li.book img {
   width: 68px;
   height: 94px;
@@ -315,12 +321,12 @@ section.related_books ul.books li.book img {
   float: left;
   margin-right: 8px;
 }
-/* line 85, ../../../scss/partials/_books.scss */
+/* line 86, ../../../scss/partials/_books.scss */
 section.related_books ul.books li.book h4 {
   font-size: 1.3em;
   margin-bottom: 0.6em;
 }
-/* line 89, ../../../scss/partials/_books.scss */
+/* line 90, ../../../scss/partials/_books.scss */
 section.related_books ul.books li.book span {
   color: #666666;
 }
@@ -492,20 +498,21 @@ body #container #content_container section.related_videos ul.videos li.video {
   float: left;
   margin-right: 20px;
   text-align: center;
+  width: 150px;
 }
-/* line 42, ../../../scss/partials/_videos.scss */
+/* line 43, ../../../scss/partials/_videos.scss */
 body #container #content_container section.related_videos ul.videos li.video h4.title {
   color: #666666;
 }
-/* line 43, ../../../scss/partials/_videos.scss */
+/* line 44, ../../../scss/partials/_videos.scss */
 body #container #content_container section.related_videos ul.videos li.video span.author {
   color: #b3b3b3;
 }
-/* line 45, ../../../scss/partials/_videos.scss */
+/* line 46, ../../../scss/partials/_videos.scss */
 body #container #content_container section.related_videos ul.videos li.video:hover img {
   border-color: #0099e6;
 }
-/* line 49, ../../../scss/partials/_videos.scss */
+/* line 50, ../../../scss/partials/_videos.scss */
 body #container #content_container section.related_videos ul.videos li.video img {
   width: 120px;
   height: 80px;
